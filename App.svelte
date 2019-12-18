@@ -140,24 +140,25 @@ let answer_key = [
 ]
   
   let selected = "a"
-  
+  const max_per_cat = 20;
+  const max_r_cat = 212.132;
   $: action = answers.filter(e => e == "Action").length;
-  $: action_r = action*(212.132/2)/12
+  $: action_r = action*(max_r_cat)/max_per_cat
   $: action_x = Math.round(150-calculate_side(action_r))
   $: action_y = Math.round(150-calculate_side(action_r))
-
+ 
   $: ideas = answers.filter(e => e == "Ideas").length;
-  $: ideas_r = ideas*(212.132/2)/12
+  $: ideas_r = ideas*(max_r_cat)/max_per_cat
   $: ideas_x = Math.round(150-calculate_side(ideas_r))
   $: ideas_y = Math.round(150+calculate_side(ideas_r))
 
   $: process = answers.filter(e => e == "Process").length;
-  $: process_r = process*(212.132/2)/12
+  $: process_r = process*(max_r_cat)/max_per_cat
   $: process_x = Math.round(150+calculate_side(process_r))
   $: process_y = Math.round(150-calculate_side(process_r))
 
   $: people = answers.filter(e => e == "People").length;
-  $: people_r = people*(212.132/2)/12
+  $: people_r = people*(max_r_cat)/max_per_cat
   $: people_x = Math.round(150+calculate_side(people_r))
   $: people_y = Math.round(150+calculate_side(people_r))
 </script>
@@ -294,3 +295,5 @@ let answer_key = [
   </Actions>
 </Card>
 {/if}
+
+           
