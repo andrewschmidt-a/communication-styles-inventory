@@ -6,7 +6,23 @@
   import Radio from '@smui/radio';
   import FormField from '@smui/form-field';
   import Slider from '@smui/slider'
+  import sendResults from './airtable.js'
+
+
   let calculate_side = (c) =>  Math.sqrt(Math.pow(c, 2)/2)
+
+
+  let shared_results = false;
+
+  let shareResults = function(){
+      sendResults({
+          "action": action,
+          "ideas": ideas,
+          "process": process,
+          "people": people
+      });
+      shared_results = true;
+  }
 
 
   let begin = false;
@@ -164,37 +180,11 @@ let answer_key = [
 </script>
 
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
 
 	p {
 		margin: 1em auto;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
 </style>
 
 <svelte:head>
@@ -246,7 +236,7 @@ let answer_key = [
             <span slot="label">{questions[page]["B"]}</span>
         </FormField>
         {/if}
-        {#if page == 40}
+        {#if page == 40 || true}
             <svg xmlns="http://www.w3.org/2000/svg" 
             xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
             <defs>
@@ -282,6 +272,17 @@ let answer_key = [
                 <line x1="{people_x}" y1="{people_y}" x2="{process_x}" y2="{process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
             </g>
         </svg>
+        <br>
+        <center>
+            {#if shared_results}
+                <p>Thank you for sharing your results!</p>
+            {/if}
+            {#if !shared_results}
+                <Button on:click={shareResults}>
+                <Label>Share Results</Label>
+                </Button>
+            {/if}
+        </center>
         {/if}
         </div>
     </Content>
