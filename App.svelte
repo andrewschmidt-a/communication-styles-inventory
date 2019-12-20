@@ -6,8 +6,7 @@
   import Radio from '@smui/radio';
   import FormField from '@smui/form-field';
   import Slider from '@smui/slider'
-  import sendResults from './airtable.js'
-
+  const axios = require('axios')
 
   let calculate_side = (c) =>  Math.sqrt(Math.pow(c, 2)/2)
 
@@ -15,12 +14,8 @@
   let shared_results = false;
 
   let shareResults = function(){
-      sendResults({
-          "action": action,
-          "ideas": ideas,
-          "process": process,
-          "people": people
-      });
+
+      axios.get('https://us-central1-communicationstylesinventory.cloudfunctions.net/communication-styles-inventory-results?action='+action+'&ideas='+ideas+'&process='+process+'&people='+people)
       shared_results = true;
   }
 
