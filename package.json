@@ -1,7 +1,7 @@
 {
-  "name": "smui-example-webpack",
+  "name": "communication-styles-inventory",
   "version": "1.0.0",
-  "description": "An example project implementing Svelte Material UI with Webpack.",
+  "description": "A personality test frontend",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -9,7 +9,7 @@
     "watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Hunter Perrin <hperrin@gmail.com>",
+  "author": "Andrew Schmidt <andrew.mkniger@gmail.com>",
   "license": "Apache-2.0",
   "devDependencies": {
     "@material/typography": "^3.1.0",
