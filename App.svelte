@@ -195,6 +195,8 @@ let answer_key = [
 			font-size: 4em;
 		}
 	}
+
+
 </style>
 
 <svelte:head>
@@ -246,7 +248,7 @@ let answer_key = [
             <span slot="label">{questions[page]["B"]}</span>
         </FormField>
         {/if}
-        {#if page == 40}
+        {#if page == 40 }
             <svg xmlns="http://www.w3.org/2000/svg" 
             xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
             <defs>
@@ -257,6 +259,12 @@ let answer_key = [
             <g clip-path="url(#_clipPath_rqatKbygh5QZF4AQWI1kvTrCXwUilDez)">
                 <g opacity="0.88">
                     <rect x="0" y="0" width="300" height="300" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+                </g>
+                <g opacity="0.3">
+                    <rect x="0" y="0" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,0,0)"/>
+                    <rect x="150" y="0" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,255,0)"/>
+                    <rect x="0" y="150" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(246,76,47)"/>
+                    <rect x="150" y="150" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,0,255)"/>
                 </g>
                 <line x1="150" y1="0" x2="150" y2="300" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
                 <line x1="0" y1="150" x2="300" y2="150" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
@@ -296,4 +304,3 @@ let answer_key = [
 </Card>
 {/if}
 
-           
