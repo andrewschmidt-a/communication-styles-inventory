@@ -1,10 +1,10 @@
-# SMUI Webpack Example
+# Communication Styles Invenctory
 
-An example project implementing [Svelte Material UI](https://github.com/hperrin/svelte-material-ui) with [Webpack](https://webpack.js.org/).
+Cool description here
 
 # License
 
-Copyright 2019 Hunter Perrin
+Copyright 2020 Nemcrunchers
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

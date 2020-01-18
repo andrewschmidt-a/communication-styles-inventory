@@ -132,7 +132,7 @@ let answer_key = [
     {"A":"People","B":"Ideas"},
     {"A":"Ideas","B":"People"},
     {"A":"Process","B":"Action"},
-    {"A":"Ideas","B":"Action"},
+    {"A":"People","B":"Action"},
     {"A":"Process","B":"Ideas"},
     {"A":"Action","B":"Ideas"},
     {"A":"Process","B":"People"},
@@ -210,7 +210,7 @@ let answer_key = [
 <Card style="width: 80%; margin-left: 10%;">
     <Content class="mdc-typography--body2" style="display">
         <p><center><strong>Communication Style Inventory</strong></center> </p>
-        <p><left>This application is designed to help you discover your preferred communication style. You will be presented with 40 pairs of statements.  In each pair, select the statement that is most true of you.  Sometimes both statements will be true.  Sometimes neither will be exactly descriptive of you.  Pick the statement that is most true. Your score and communication style preference will appear at the end.</left> </p>
+        <p><left>This application is designed to help you discover your preferred communication style. You will be presented with 40 pairs of statements.  In each pair, select the statement that is most true of you.  Sometimes both statements will be true.  Sometimes neither will be exactly descriptive of you.  Pick the statement that is most true. Your score and communication style preference will appear at the end of the questionnaire.</left> </p>
         
         <center>
             <Button on:click={()=> begin = true}>
@@ -238,7 +238,7 @@ let answer_key = [
             <span slot="label">{questions[page]["B"]}</span>
         </FormField>
         {/if}
-        {#if page == 40 }
+        {#if page == 40  }<!--|| true-->
             <svg xmlns="http://www.w3.org/2000/svg" 
             xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
             <defs>
@@ -250,10 +250,10 @@ let answer_key = [
                 <g opacity="0.88">
                     <rect x="0" y="0" width="300" height="300" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
                 </g>
-                <g opacity="0.3">
+                <g opacity="0.4">
                     <rect x="0" y="0" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,0,0)"/>
                     <rect x="150" y="0" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,255,0)"/>
-                    <rect x="0" y="150" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(246,76,47)"/>
+                    <rect x="0" y="150" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,122,0)"/>
                     <rect x="150" y="150" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,0,255)"/>
                 </g>
                 <line x1="150" y1="0" x2="150" y2="300" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
@@ -283,7 +283,7 @@ let answer_key = [
         <br>
         <center>
             {#if shared_results}
-                <p>Thank you for sharing your results!</p>
+                <p>Loading...</p>
             {/if}
             {#if !shared_results}
                 <Button on:click={shareResults}>
