@@ -15,7 +15,7 @@
 
   let shareResults = function(){
 
-      axios.get('https://us-central1-communicationstylesinventory.cloudfunctions.net/communication-styles-inventory-results?action='+action+'&ideas='+ideas+'&process='+process+'&people='+people)
+      window.location=`https://airtable.com/shrFjIMkvj7dC549W?prefill_Action=${action}&prefill_Process=${process}&prefill_People=${people}&prefill_Ideas=${ideas}`
       shared_results = true;
   }
 
