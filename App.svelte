@@ -210,7 +210,7 @@ let answer_key = [
 <Card style="width: 80%; margin-left: 10%;">
     <Content class="mdc-typography--body2" style="display">
         <p><center><strong>Communication Style Inventory</strong></center> </p>
-        <p><left>This application is designed to help you discover your preferred communication style. You will be presented with 40 pairs of statements.  In each pair, select the statement that is most true of you.  Sometimes both statements will be true.  Sometimes neither will be exactly descriptive of you.  Pick the statement that is most true. Your score and communication style preference will appear at the end of the questionnaire.</left> </p>
+        <p><left>This application is designed to help you discover your preferred communication style. You will be presented with 40 pairs of statements.  In each pair, select the statement that is most true of you.  Sometimes both statements will be true.  Sometimes neither will be exactly descriptive of you.  Pick the statement that is most true. Your score and communication style preference will appear at the end of the questionnaire. Thank you for your participation.</left> </p>
         
         <center>
             <Button on:click={()=> begin = true}>
