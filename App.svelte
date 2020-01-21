@@ -108,46 +108,46 @@ let answers = [
 ]
 
 let answer_key = [
-    {"A":"Action","B":"Process"}, // Q1
-    {"A":"Ideas","B":"People"},  // Q2
-    {"A":"People","B":"Ideas"},
-    {"A":"Action","B":"Process"},
-    {"A":"Action","B":"Process"},
-    {"A":"Ideas","B":"People"},
-    {"A":"Action","B":"Process"},
-    {"A":"Ideas","B":"People"},
-    {"A":"Action","B":"Process"},
-    {"A":"People","B":"Ideas"},
-    {"A":"Ideas","B":"People"},
-    {"A":"Process","B":"Action"},
-    {"A":"Process","B":"Action"},
-    {"A":"People","B":"Ideas"},
-    {"A":"People","B":"Process"},
-    {"A":"Ideas","B":"Action"},
-    {"A":"Action","B":"Process"},
-    {"A":"Ideas","B":"People"},
-    {"A":"Process","B":"People"},
-    {"A":"Action","B":"Ideas"},
-    {"A":"Action","B":"Process"},
-    {"A":"People","B":"Ideas"},
-    {"A":"Ideas","B":"People"},
-    {"A":"Process","B":"Action"},
-    {"A":"People","B":"Action"},
-    {"A":"Process","B":"Ideas"},
-    {"A":"Action","B":"Ideas"},
-    {"A":"Process","B":"People"},
-    {"A":"Action","B":"Process"},
-    {"A":"People","B":"Ideas"},
-    {"A":"Ideas","B":"Process"},
-    {"A":"Action","B":"People"},
-    {"A":"Action","B":"Process"},
-    {"A":"Ideas","B":"People"},
-    {"A":"Process","B":"Action"},
-    {"A":"Ideas","B":"People"},
-    {"A":"Process","B":"Action"},
-    {"A":"Ideas","B":"People"},
-    {"A":"Process","B":"Ideas"},
-    {"A":"Action","B":"People"}
+    {"A":"Action","B":"Process"}, // Q1 <!--checked-->
+    {"A":"Ideas","B":"People"},  // Q2 <!--checked-->
+    {"A":"People","B":"Ideas"}, // <!--checked-->
+    {"A":"Action","B":"Process"}, // <!--checked-->
+    {"A":"Action","B":"Process"},// <!--checked-->
+    {"A":"Ideas","B":"People"},// <!--checked-->
+    {"A":"Action","B":"Process"},// <!--checked-->
+    {"A":"Ideas","B":"People"},// <!--checked-->
+    {"A":"Action","B":"Process"},// <!--checked-->
+    {"A":"People","B":"Ideas"},// <!--checked-->
+    {"A":"Ideas","B":"People"},// <!--checked-->
+    {"A":"Process","B":"Action"},// <!--checked-->
+    {"A":"Process","B":"Action"},// <!--checked-->
+    {"A":"People","B":"Ideas"},// <!--checked-->
+    {"A":"People","B":"Process"},// <!--checked-->
+    {"A":"Ideas","B":"Action"},// <!--checked-->
+    {"A":"Action","B":"Process"},// <!--checked-->
+    {"A":"Ideas","B":"People"},// <!--checked-->
+    {"A":"Process","B":"People"},// <!--checked-->
+    {"A":"Action","B":"Ideas"},// <!--checked-->
+    {"A":"Action","B":"Process"},// <!--checked-->
+    {"A":"People","B":"Ideas"},// <!--checked-->
+    {"A":"Ideas","B":"People"},// <!--checked-->
+    {"A":"Process","B":"Action"},// <!--checked-->
+    {"A":"People","B":"Action"},// <!--checked-->
+    {"A":"Process","B":"Ideas"},// <!--checked-->
+    {"A":"Action","B":"Ideas"},// <!--checked-->
+    {"A":"Process","B":"People"},// <!--checked-->
+    {"A":"Action","B":"Process"},// <!--checked-->
+    {"A":"People","B":"Ideas"},// <!--checked-->
+    {"A":"Ideas","B":"Process"},// <!--checked-->
+    {"A":"Action","B":"People"},// <!--checked-->
+    {"A":"Action","B":"Process"},// <!--checked-->
+    {"A":"Ideas","B":"People"},// <!--checked-->
+    {"A":"Process","B":"Action"},// <!--checked-->
+    {"A":"Ideas","B":"People"},// <!--checked-->
+    {"A":"Ideas","B":"Action"},// <!--Fixed-->
+    {"A":"Process","B":"People"},// <!--Fixed-->
+    {"A":"Process","B":"Ideas"},// <!--checked-->
+    {"A":"Action","B":"People"}// <!--checked-->
 ]
   
   let selected = "a"
