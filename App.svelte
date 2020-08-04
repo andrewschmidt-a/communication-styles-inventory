@@ -44,7 +44,22 @@
         });
         });
 
-        req.write(JSON.stringify({to: 'Andrew.mkniger@gmail.com', message: 'This is my message'}));
+        req.write(JSON.stringify({
+                "to": "andrew.schmidt@live.com",
+                "action": action,
+                "action_x": action_x,
+                "action_y": action_y,
+                "people": people,
+                "people_x": people_x,
+                "people_y": people_y,
+                "process": process,
+                "process_x": process_x,
+                "process_y": process_y,
+                "ideas": ideas,
+                "ideas_x": ideas_x,
+                "ideas_y": ideas_y
+            }	
+        ));
         req.end();
   }
 
