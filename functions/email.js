@@ -391,10 +391,10 @@ function getEmail(body){
                               <circle vector-effect="non-scaling-stroke" cx="${body.ideas_x}" cy="${body.ideas_y}" r="4" fill="rgb(255,0,0)"/>
                               <circle vector-effect="non-scaling-stroke" cx="${body.process_x}" cy="${body.process_y}" r="4" fill="rgb(255,0,0)"/>
                               <circle vector-effect="non-scaling-stroke" cx="${body.people_x}" cy="${body.people_y}" r="4" fill="rgb(255,0,0)"/>
-                              <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${people_x}" y2="${body.people_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="${body.action_x}" y1="${body.action_y}" x2="${process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${action_x}" y2="${body.action_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="${body.people_x}" y1="${body.people_y}" x2="${process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+                              <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${body.people_x}" y2="${body.people_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+                              <line x1="${body.action_x}" y1="${body.action_y}" x2="${body.process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+                              <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${body.action_x}" y2="${body.action_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+                              <line x1="${body.people_x}" y1="${body.people_y}" x2="${body.process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
                           </g>
                       </svg>
                           <p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
