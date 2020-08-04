@@ -448,7 +448,7 @@ function sendEmail(client, message, senderEmail, senderName) {
       },
       subject: 'Netlify Function - Sendgrid Email',
       to: 'your.email@here.com',
-      html: `Hey, you\'ve sent an email from Netlify Functions<br/>Message: ${message}`
+      html: `Hey, you\'ve sent an  email from Netlify Functions<br/>Message: ${message}`
     }
 
     client
