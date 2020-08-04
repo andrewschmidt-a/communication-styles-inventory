@@ -21,7 +21,7 @@
   let emailResults = function(){
 
       var options = {
-        "method": "GET",
+        "method": "POST",
         "hostname": "communication-styles-inventory.netlify.app",
         "port": null,
         "path": "/.netlify/functions/email",
