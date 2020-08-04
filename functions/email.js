@@ -1,6 +1,6 @@
 const client = require("@sendgrid/mail")
 
-function getEmail(action, process, people, ideas){
+function getEmail(body){
   return `
   <!doctype html>
   <html>
@@ -387,14 +387,14 @@ function getEmail(action, process, people, ideas){
                               <g style="mix-blend-mode:normal;" opacity="0.32">
                                   <text transform="matrix(1,0,0,1,192,251.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">People: {people}</text>
                               </g>
-                              <circle vector-effect="non-scaling-stroke" cx="${action.x}" cy="${action.y}" r="4" fill="rgb(255,0,0)"/>
-                              <circle vector-effect="non-scaling-stroke" cx="${ideas.x}" cy="${ideas.y}" r="4" fill="rgb(255,0,0)"/>
-                              <circle vector-effect="non-scaling-stroke" cx="${process.x}" cy="${process.y}" r="4" fill="rgb(255,0,0)"/>
-                              <circle vector-effect="non-scaling-stroke" cx="${people.x}" cy="${people.y}" r="4" fill="rgb(255,0,0)"/>
-                              <line x1="${ideas.x}" y1="${ideas.y}" x2="${people.x}" y2="${people.y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="${action.x}" y1="${action.y}" x2="${process.x}" y2="${process.y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="${ideas.x}" y1="${ideas.y}" x2="${action.x}" y2="${action.y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="${people.x}" y1="${people.y}" x2="${process.x}" y2="${process.y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+                              <circle vector-effect="non-scaling-stroke" cx="${body.action_x}" cy="${body.action_y}" r="4" fill="rgb(255,0,0)"/>
+                              <circle vector-effect="non-scaling-stroke" cx="${body.ideas_x}" cy="${body.ideas_y}" r="4" fill="rgb(255,0,0)"/>
+                              <circle vector-effect="non-scaling-stroke" cx="${body.process_x}" cy="${body.process_y}" r="4" fill="rgb(255,0,0)"/>
+                              <circle vector-effect="non-scaling-stroke" cx="${body.people_x}" cy="${body.people_y}" r="4" fill="rgb(255,0,0)"/>
+                              <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${people_x}" y2="${body.people_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+                              <line x1="${body.action_x}" y1="${body.action_y}" x2="${process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+                              <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${action_x}" y2="${body.action_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+                              <line x1="${body.people_x}" y1="${body.people_y}" x2="${process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
                           </g>
                       </svg>
                           <p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
@@ -478,7 +478,7 @@ exports.handler = function(event, context, callback) {
     SENDGRID_SENDER_EMAIL,
     SENDGRID_SENDER_NAME,
     body.to,
-    getEmail(body.action, body.process, body.people, body.ideas)
+    getEmail(body)
   )
   .then(response => callback(null, { statusCode: response.statusCode }))
   .catch(err => callback(err, null))
