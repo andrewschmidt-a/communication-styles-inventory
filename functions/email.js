@@ -453,7 +453,7 @@ function sendEmail(client, message, senderEmail, senderName, toEmailAddress, htm
       html: html,
       attachments: [
         {
-          content: attachment,
+          content: "",
           filename: "communication_styles_inventory_results.svg",
           type: "image/svg+xml",
           disposition: "attachment"
