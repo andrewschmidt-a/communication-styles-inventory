@@ -18,6 +18,35 @@
       window.location=`https://airtable.com/shrFjIMkvj7dC549W?prefill_Action=${action}&prefill_Process=${process}&prefill_People=${people}&prefill_Ideas=${ideas}`
       shared_results = true;
   }
+  let emailResults = function(){
+
+      var options = {
+        "method": "GET",
+        "hostname": "communication-styles-inventory.netlify.app",
+        "port": null,
+        "path": "/.netlify/functions/email",
+        "headers": {
+            "content-type": "application/json",
+            "content-length": "69"
+        }
+        };
+
+        var req = http.request(options, function (res) {
+        var chunks = [];
+
+        res.on("data", function (chunk) {
+            chunks.push(chunk);
+        });
+
+        res.on("end", function () {
+            var body = Buffer.concat(chunks);
+            console.log(body.toString());
+        });
+        });
+
+        req.write(JSON.stringify({to: 'Andrew.mkniger@gmail.com', message: 'This is my message'}));
+        req.end();
+  }
 
 
   let begin = false;
@@ -206,6 +235,7 @@ let answer_key = [
 <Slider bind:value="{people}" min={0} max={12} step={1} /> -->
 
 <br>
+<button on:click={emailResults}>Click me</button>
  {#if !begin}
 <Card style="width: 80%; margin-left: 10%;">
     <Content class="mdc-typography--body2" style="display">
