@@ -1,5 +1,47 @@
 const client = require("@sendgrid/mail")
-
+function getAttachment(body){
+  return `<svg xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
+  <defs>
+      <clipPath id="_clipPath_rqatKbygh5QZF4AQWI1kvTrCXwUilDez">
+          <rect width="300" height="300"/>
+      </clipPath>
+  </defs>
+  <g clip-path="url(#_clipPath_rqatKbygh5QZF4AQWI1kvTrCXwUilDez)">
+      <g opacity="0.88">
+          <rect x="0" y="0" width="300" height="300" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
+      </g>
+      <g opacity="0.4">
+          <rect x="0" y="0" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,0,0)"/>
+          <rect x="150" y="0" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,255,0)"/>
+          <rect x="0" y="150" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,122,0)"/>
+          <rect x="150" y="150" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,0,255)"/>
+      </g>
+      <line x1="150" y1="0" x2="150" y2="300" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+      <line x1="0" y1="150" x2="300" y2="150" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+      <g style="mix-blend-mode:normal;" opacity="0.32">
+          <text transform="matrix(1,0,0,1,44.5,70.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Action: {action}</text>
+      </g>
+      <g style="mix-blend-mode:normal;" opacity="0.32">
+          <text transform="matrix(1,0,0,1,187.5,70.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Process: {process}</text>
+      </g>
+      <g style="mix-blend-mode:normal;" opacity="0.32">
+          <text transform="matrix(1,0,0,1,49,251.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Ideas: {ideas}</text>
+      </g>
+      <g style="mix-blend-mode:normal;" opacity="0.32">
+          <text transform="matrix(1,0,0,1,192,251.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">People: {people}</text>
+      </g>
+      <circle vector-effect="non-scaling-stroke" cx="${body.action_x}" cy="${body.action_y}" r="4" fill="rgb(255,0,0)"/>
+      <circle vector-effect="non-scaling-stroke" cx="${body.ideas_x}" cy="${body.ideas_y}" r="4" fill="rgb(255,0,0)"/>
+      <circle vector-effect="non-scaling-stroke" cx="${body.process_x}" cy="${body.process_y}" r="4" fill="rgb(255,0,0)"/>
+      <circle vector-effect="non-scaling-stroke" cx="${body.people_x}" cy="${body.people_y}" r="4" fill="rgb(255,0,0)"/>
+      <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${body.people_x}" y2="${body.people_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+      <line x1="${body.action_x}" y1="${body.action_y}" x2="${body.process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+      <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${body.action_x}" y2="${body.action_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+      <line x1="${body.people_x}" y1="${body.people_y}" x2="${body.process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
+  </g>
+</svg>`.toString("base64")
+}
 function getEmail(body){
   return `
   <!doctype html>
@@ -356,47 +398,7 @@ function getEmail(body){
                           <p>Hi there,</p>
                           <p>Sometimes you just want to send a simple HTML email with a simple design and clear call to action. This is it.</p>
                           
-                          <svg xmlns="http://www.w3.org/2000/svg" 
-                          xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
-                          <defs>
-                              <clipPath id="_clipPath_rqatKbygh5QZF4AQWI1kvTrCXwUilDez">
-                                  <rect width="300" height="300"/>
-                              </clipPath>
-                          </defs>
-                          <g clip-path="url(#_clipPath_rqatKbygh5QZF4AQWI1kvTrCXwUilDez)">
-                              <g opacity="0.88">
-                                  <rect x="0" y="0" width="300" height="300" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,255,255)"/>
-                              </g>
-                              <g opacity="0.4">
-                                  <rect x="0" y="0" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,0,0)"/>
-                                  <rect x="150" y="0" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,255,0)"/>
-                                  <rect x="0" y="150" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(255,122,0)"/>
-                                  <rect x="150" y="150" width="150" height="150" transform="matrix(1,0,0,1,0,0)" fill="rgb(0,0,255)"/>
-                              </g>
-                              <line x1="150" y1="0" x2="150" y2="300" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="0" y1="150" x2="300" y2="150" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <g style="mix-blend-mode:normal;" opacity="0.32">
-                                  <text transform="matrix(1,0,0,1,44.5,70.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Action: {action}</text>
-                              </g>
-                              <g style="mix-blend-mode:normal;" opacity="0.32">
-                                  <text transform="matrix(1,0,0,1,187.5,70.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Process: {process}</text>
-                              </g>
-                              <g style="mix-blend-mode:normal;" opacity="0.32">
-                                  <text transform="matrix(1,0,0,1,49,251.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Ideas: {ideas}</text>
-                              </g>
-                              <g style="mix-blend-mode:normal;" opacity="0.32">
-                                  <text transform="matrix(1,0,0,1,192,251.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">People: {people}</text>
-                              </g>
-                              <circle vector-effect="non-scaling-stroke" cx="${body.action_x}" cy="${body.action_y}" r="4" fill="rgb(255,0,0)"/>
-                              <circle vector-effect="non-scaling-stroke" cx="${body.ideas_x}" cy="${body.ideas_y}" r="4" fill="rgb(255,0,0)"/>
-                              <circle vector-effect="non-scaling-stroke" cx="${body.process_x}" cy="${body.process_y}" r="4" fill="rgb(255,0,0)"/>
-                              <circle vector-effect="non-scaling-stroke" cx="${body.people_x}" cy="${body.people_y}" r="4" fill="rgb(255,0,0)"/>
-                              <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${body.people_x}" y2="${body.people_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="${body.action_x}" y1="${body.action_y}" x2="${body.process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${body.action_x}" y2="${body.action_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                              <line x1="${body.people_x}" y1="${body.people_y}" x2="${body.process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
-                          </g>
-                      </svg>
+                          
                           <p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
                           <p>Good luck! Hope it works.</p>
                         </td>
@@ -448,7 +450,15 @@ function sendEmail(client, message, senderEmail, senderName, toEmailAddress, htm
       },
       subject: 'Communication Styles Inventory Results',
       to: toEmailAddress,
-      html: html
+      html: html,
+      attachments: [
+        {
+          content: getAttachment(body),
+          filename: "communication_styles_inventory_results.svg",
+          type: "image/svg+xml",
+          disposition: "attachment"
+        }
+      ]
     }
 
     client
