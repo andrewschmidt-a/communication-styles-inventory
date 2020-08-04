@@ -6,7 +6,7 @@
   import Radio from '@smui/radio';
   import FormField from '@smui/form-field';
   import Slider from '@smui/slider'
-  const axios = require('axios')
+  const http = require('https')
 
   let calculate_side = (c) =>  Math.sqrt(Math.pow(c, 2)/2)
 
