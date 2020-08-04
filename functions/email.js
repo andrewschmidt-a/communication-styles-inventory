@@ -461,6 +461,7 @@ function sendEmail(client, message, senderEmail, senderName, toEmailAddress) {
 }
 
 exports.handler = function(event, context, callback) {
+  callback(null, { statusCode: 200 })
   const {
     SENDGRID_API_KEY,
     SENDGRID_SENDER_EMAIL,
