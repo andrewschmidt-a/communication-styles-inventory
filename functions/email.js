@@ -441,7 +441,7 @@ function getEmail(body){
 
 
 
-function sendEmail(client, message, senderEmail, senderName, toEmailAddress, html) {
+function sendEmail(client, message, senderEmail, senderName, toEmailAddress, html, attachment) {
   return new Promise((fulfill, reject) => {
     const data = {
       from: {
@@ -453,7 +453,7 @@ function sendEmail(client, message, senderEmail, senderName, toEmailAddress, htm
       html: html,
       attachments: [
         {
-          content: getAttachment(body),
+          content: attachment,
           filename: "communication_styles_inventory_results.svg",
           type: "image/svg+xml",
           disposition: "attachment"
@@ -488,7 +488,8 @@ exports.handler = function(event, context, callback) {
     SENDGRID_SENDER_EMAIL,
     SENDGRID_SENDER_NAME,
     body.to,
-    getEmail(body)
+    getEmail(body),
+    getAttachment(body)
   )
   .then(response => callback(null, { statusCode: response.statusCode }))
   .catch(err => callback(err, null))
