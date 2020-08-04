@@ -466,11 +466,11 @@ exports.handler = function(event, context, callback) {
     SENDGRID_SENDER_EMAIL,
     SENDGRID_SENDER_NAME
   } = process.env
-  callback(null, { statusCode: 200, body: JSON.stringify({
-    SENDGRID_API_KEY,
-    SENDGRID_SENDER_EMAIL,
-    SENDGRID_SENDER_NAME
-  }) })
+  // callback(null, { statusCode: 200, body: JSON.stringify({
+  //   SENDGRID_API_KEY,
+  //   SENDGRID_SENDER_EMAIL,
+  //   SENDGRID_SENDER_NAME
+  // }) })
 
   const body = JSON.parse(event.body)
   const message = body.message
