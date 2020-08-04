@@ -439,16 +439,16 @@ function getEmail(action, process, people, ideas){
 
 
 
-function sendEmail(client, message, senderEmail, senderName, toEmailAddress) {
+function sendEmail(client, message, senderEmail, senderName, toEmailAddress, html) {
   return new Promise((fulfill, reject) => {
     const data = {
       from: {
         email: senderEmail,
         name: senderName
       },
-      subject: 'Netlify Function - Sendgrid Email',
+      subject: 'Communication Styles Inventory Results',
       to: toEmailAddress,
-      html: `Hey, you\'ve sent an  email from Netlify Functions<br/>Message: ${message}`
+      html: html
     }
 
     client
@@ -477,7 +477,8 @@ exports.handler = function(event, context, callback) {
     message,
     SENDGRID_SENDER_EMAIL,
     SENDGRID_SENDER_NAME,
-    body.to
+    body.to,
+    getEmail(body.action, body.process, body.people, body.ideas)
   )
   .then(response => callback(null, { statusCode: response.statusCode }))
   .catch(err => callback(err, null))
