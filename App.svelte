@@ -2,6 +2,9 @@
   import Card, {Content, PrimaryAction, Media, MediaContent, Actions, ActionButtons, ActionIcons} from '@smui/card';
   import Button, {Label} from '@smui/button';
   import IconButton, {Icon} from '@smui/icon-button';
+  import IconTextField from '@smui/textfield/icon/index';
+  import Textfield from '@smui/textfield';
+  import HelperText from '@smui/textfield/helper-text'
 
   import Radio from '@smui/radio';
   import FormField from '@smui/form-field';
@@ -10,7 +13,11 @@
 
   let calculate_side = (c) =>  Math.sqrt(Math.pow(c, 2)/2)
 
-  let email_address = "";
+  let email_address = {
+      value: "",
+      dirty: false,
+      invalid: true
+  };
   let shared_results = false;
 
   let shareResults = function(){
@@ -45,7 +52,7 @@
         });
 
         req.write(JSON.stringify({
-                "to": "andrew.schmidt@live.com",
+                "to": email_address.value,
                 "action": action,
                 "action_x": action_x,
                 "action_y": action_y,
@@ -224,12 +231,6 @@ let answer_key = [
 		margin: 1em auto;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-
 
 </style>
 
@@ -250,7 +251,6 @@ let answer_key = [
 <Slider bind:value="{people}" min={0} max={12} step={1} /> -->
 
 <br>
-<button on:click={emailResults}>Click me</button>
  {#if !begin}
 <Card style="width: 80%; margin-left: 10%;">
     <Content class="mdc-typography--body2" style="display">
@@ -283,7 +283,7 @@ let answer_key = [
             <span slot="label">{questions[page]["B"]}</span>
         </FormField>
         {/if}
-        {#if page == 40  }<!--|| true-->
+        {#if page == 40 || true}
             <svg xmlns="http://www.w3.org/2000/svg" 
             xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
             <defs>
@@ -327,13 +327,14 @@ let answer_key = [
         </svg>
         <br>
         <center>
-            <div>
-                <Textfield variant="filled" bind:value={email_address} label="Label" input$aria-controls="helper-text-filled-a" input$aria-describedby="helper-text-filled-a" />
-                <HelperText id="helper-text-filled-a">Email Address</HelperText>
-            </div>
-            <Button on:click={emailResults} disabled={email_address==""}>
-                <Label>Share Results</Label>
-            </Button>
+        <div class="margins">
+            <Textfield type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="Email Address" style="min-width: 250px;" input$autocomplete="email">
+                {#if email_address.value !== '' && email_address.dirty && !email_address.invalid}
+                    <IconTextField class="material-icons" role="button" on:click={emailResults}>send</IconTextField>
+                {/if}
+            </Textfield>
+            <HelperText validationMsg>That's not a valid email address.</HelperText>
+        </div>
         </center>
         <center>
             {#if shared_results}
