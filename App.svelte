@@ -10,7 +10,7 @@
 
   let calculate_side = (c) =>  Math.sqrt(Math.pow(c, 2)/2)
 
-
+  let email_address = "";
   let shared_results = false;
 
   let shareResults = function(){
@@ -327,12 +327,21 @@ let answer_key = [
         </svg>
         <br>
         <center>
+            <div>
+                <Textfield variant="filled" bind:value={email_address} label="Label" input$aria-controls="helper-text-filled-a" input$aria-describedby="helper-text-filled-a" />
+                <HelperText id="helper-text-filled-a">Email Address</HelperText>
+            </div>
+            <Button on:click={emailResults} disabled={email_address==""}>
+                <Label>Share Results</Label>
+            </Button>
+        </center>
+        <center>
             {#if shared_results}
                 <p>Loading...</p>
             {/if}
             {#if !shared_results}
                 <Button on:click={shareResults}>
-                <Label>Share Results</Label>
+                    <Label>Share Results</Label>
                 </Button>
             {/if}
         </center>
