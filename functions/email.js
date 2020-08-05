@@ -1,6 +1,6 @@
 const client = require("@sendgrid/mail")
 function getAttachment(body){
-  return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" 
+  return `<svg xmlns="http://www.w3.org/2000/svg" 
   xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
   <defs>
       <clipPath id="_clipPath_rqatKbygh5QZF4AQWI1kvTrCXwUilDez">
@@ -40,7 +40,7 @@ function getAttachment(body){
       <line x1="${body.ideas_x}" y1="${body.ideas_y}" x2="${body.action_x}" y2="${body.action_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
       <line x1="${body.people_x}" y1="${body.people_y}" x2="${body.process_x}" y2="${body.process_y}" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(255,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
   </g>
-</svg>`).toString("base64")
+</svg>`
 }
 function getEmail(body){
   return `
@@ -402,6 +402,7 @@ function getEmail(body){
                           <p>Process: ${body.process}</p>
                           <p>Ideas: ${body.ideas}</p>
                           
+                          ${getAttachment(body)}
                           
                           <p>Attached is an image visualizing your results</p>
                         </td>
@@ -473,7 +474,7 @@ exports.handler = function(event, context, callback) {
     SENDGRID_SENDER_NAME,
     body.to,
     getEmail(body),
-    getAttachment(body)
+    Buffer.from(getAttachment(body)).toString('base64')
   )
   .then(response => callback(null, { statusCode: response.statusCode }))
   .catch(err => callback(err, null))
