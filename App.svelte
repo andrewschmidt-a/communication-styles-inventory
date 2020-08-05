@@ -47,7 +47,11 @@
 
         res.on("end", function () {
             var body = Buffer.concat(chunks);
-            console.log(body.toString());
+            email_address = {
+                value: "",
+                dirty: false,
+                invalid: true
+            }
         });
         });
 
