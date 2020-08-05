@@ -284,6 +284,7 @@ let answer_key = [
         </FormField>
         {/if}
         {#if page == 40 }
+            <center>
             <svg xmlns="http://www.w3.org/2000/svg" 
             xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
             <defs>
@@ -326,7 +327,6 @@ let answer_key = [
             </g>
         </svg>
         <br>
-        <center>
         <div class="margins">
             <Textfield type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="Email Address" style="min-width: 250px;" input$autocomplete="email">
                 {#if email_address.value !== '' && email_address.dirty && !email_address.invalid}
