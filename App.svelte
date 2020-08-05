@@ -16,7 +16,8 @@
   let email_address = {
       value: "",
       dirty: false,
-      invalid: true
+      invalid: true,
+      message: ""
   };
   let shared_results = false;
 
@@ -50,7 +51,8 @@
             email_address = {
                 value: "",
                 dirty: false,
-                invalid: true
+                invalid: true,
+                message: `Sent to ${email_address.value}`
             }
         });
         });
@@ -332,11 +334,15 @@ let answer_key = [
         </svg>
         <br>
         <div class="margins">
+            <p>To receive your results by email, type your email address below and click the arrow beside the address.</p>
             <Textfield type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="Email Address" style="min-width: 250px;" input$autocomplete="email">
                 {#if email_address.value !== '' && email_address.dirty && !email_address.invalid}
                     <IconTextField class="material-icons" role="button" on:click={emailResults}>send</IconTextField>
                 {/if}
             </Textfield>
+            {#if !email_address.dirty && email_address.message != ""}
+                <p>{email_address.message}</p>
+            {/if}
             <HelperText validationMsg>That's not a valid email address.</HelperText>
         </div>
         </center>
