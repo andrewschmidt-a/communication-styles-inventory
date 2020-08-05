@@ -396,11 +396,14 @@ function getEmail(body){
                       <tr>
                         <td>
                           <p>Hi there,</p>
-                          <p>Sometimes you just want to send a simple HTML email with a simple design and clear call to action. This is it.</p>
+                          <p>Your Results are:</p>
+                          <p>Action: ${body.action}</p>
+                          <p>People: ${body.people}</p>
+                          <p>Process: ${body.process}</p>
+                          <p>Ideas: ${body.ideas}</p>
                           
                           
-                          <p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
-                          <p>Good luck! Hope it works.</p>
+                          <p>Attached is an image visualizing your results</p>
                         </td>
                       </tr>
                     </table>
@@ -410,25 +413,6 @@ function getEmail(body){
               <!-- END MAIN CONTENT AREA -->
               </table>
               <!-- END CENTERED WHITE CONTAINER -->
-  
-              <!-- START FOOTER -->
-              <div class="footer">
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td class="content-block">
-                      <span class="apple-link">Company Inc, 3 Abbey Road, San Francisco CA 94102</span>
-                      <br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="content-block powered-by">
-                      Powered by <a href="http://htmlemail.io">HTMLemail</a>.
-                    </td>
-                  </tr>
-                </table>
-              </div>
-              <!-- END FOOTER -->
-  
             </div>
           </td>
           <td>&nbsp;</td>
