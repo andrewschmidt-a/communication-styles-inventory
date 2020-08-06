@@ -30,7 +30,6 @@
 
       var options = {
         "method": "POST",
-        "hostname": "communication-styles-inventory.netlify.app",
         "port": null,
         "path": "/.netlify/functions/email",
         "headers": {

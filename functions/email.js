@@ -379,7 +379,7 @@ function getEmail(body){
       </style>
     </head>
     <body class="">
-      <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
+      <span class="preheader">Your personal communication styles inventory results</span>
       <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
         <tr>
           <td>&nbsp;</td>
@@ -397,10 +397,6 @@ function getEmail(body){
                         <td>
                           <p>Hi there,</p>
                           <p>Your Results are:</p>
-                          <p>Action: ${body.action}</p>
-                          <p>People: ${body.people}</p>
-                          <p>Process: ${body.process}</p>
-                          <p>Ideas: ${body.ideas}</p>
                           
                           ${getAttachment(body)}
                           
