@@ -289,7 +289,7 @@ let answer_key = [
             <span slot="label">{questions[page]["B"]}</span>
         </FormField>
         {/if}
-        {#if page == 40 || true }
+        {#if page == 40 }
             <center>
             <svg xmlns="http://www.w3.org/2000/svg" 
             xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
@@ -337,7 +337,7 @@ let answer_key = [
             <p>To receive your results by email, type your email address below and click the arrow beside the address.</p>
             <Textfield tabindex="0" type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="Email Address" style="min-width: 250px;" input$autocomplete="email">
             {#if email_address.value != ""}
-                <IconTextField tabindex="1" class="material-icons" role="button"  on:click={emailResults}>send</IconTextField>
+                <IconTextField tabindex="1" class="material-icons" role="button" on:  on:click={emailResults}>send</IconTextField>
             {/if}
             </Textfield>
             {#if !email_address.dirty && email_address.message != ""}
