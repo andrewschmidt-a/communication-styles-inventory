@@ -27,52 +27,53 @@
       shared_results = true;
   }
   let emailResults = function(){
-
-      var options = {
-        "method": "POST",
-        "port": null,
-        "path": "/.netlify/functions/email",
-        "headers": {
-            "content-type": "application/json",
-            "content-length": "69"
-        }
-        };
-
-        var req = http.request(options, function (res) {
-        var chunks = [];
-
-        res.on("data", function (chunk) {
-            chunks.push(chunk);
-        });
-
-        res.on("end", function () {
-            var body = Buffer.concat(chunks);
-            email_address = {
-                value: "",
-                dirty: false,
-                invalid: true,
-                message: `Sent to ${email_address.value}`
+      if(email_address.invalid == false && email_address.dirty == true && email_address.value != ""){
+        var options = {
+            "method": "POST",
+            "port": null,
+            "path": "/.netlify/functions/email",
+            "headers": {
+                "content-type": "application/json",
+                "content-length": "69"
             }
-        });
-        });
+            };
 
-        req.write(JSON.stringify({
-                "to": email_address.value,
-                "action": action,
-                "action_x": action_x,
-                "action_y": action_y,
-                "people": people,
-                "people_x": people_x,
-                "people_y": people_y,
-                "process": process,
-                "process_x": process_x,
-                "process_y": process_y,
-                "ideas": ideas,
-                "ideas_x": ideas_x,
-                "ideas_y": ideas_y
-            }	
-        ));
-        req.end();
+            var req = http.request(options, function (res) {
+            var chunks = [];
+
+            res.on("data", function (chunk) {
+                chunks.push(chunk);
+            });
+
+            res.on("end", function () {
+                var body = Buffer.concat(chunks);
+                email_address = {
+                    value: "",
+                    dirty: false,
+                    invalid: true,
+                    message: `Sent to ${email_address.value}`
+                }
+            });
+            });
+
+            req.write(JSON.stringify({
+                    "to": email_address.value,
+                    "action": action,
+                    "action_x": action_x,
+                    "action_y": action_y,
+                    "people": people,
+                    "people_x": people_x,
+                    "people_y": people_y,
+                    "process": process,
+                    "process_x": process_x,
+                    "process_y": process_y,
+                    "ideas": ideas,
+                    "ideas_x": ideas_x,
+                    "ideas_y": ideas_y
+                }	
+            ));
+            req.end();
+      }
   }
 
 
@@ -288,7 +289,7 @@ let answer_key = [
             <span slot="label">{questions[page]["B"]}</span>
         </FormField>
         {/if}
-        {#if page == 40 }
+        {#if page == 40 || true }
             <center>
             <svg xmlns="http://www.w3.org/2000/svg" 
             xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
@@ -334,10 +335,10 @@ let answer_key = [
         <br>
         <div class="margins">
             <p>To receive your results by email, type your email address below and click the arrow beside the address.</p>
-            <Textfield type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="Email Address" style="min-width: 250px;" input$autocomplete="email">
-                {#if email_address.value !== '' && email_address.dirty && !email_address.invalid}
-                    <IconTextField class="material-icons" role="button" on:click={emailResults}>send</IconTextField>
-                {/if}
+            <Textfield tabindex="0" type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="Email Address" style="min-width: 250px;" input$autocomplete="email">
+            {#if email_address.value != ""}
+                <IconTextField tabindex="1" class="material-icons" role="button"  on:click={emailResults}>send</IconTextField>
+            {/if}
             </Textfield>
             {#if !email_address.dirty && email_address.message != ""}
                 <p>{email_address.message}</p>
@@ -350,7 +351,7 @@ let answer_key = [
                 <p>Loading...</p>
             {/if}
             {#if !shared_results}
-                <Button on:click={shareResults}>
+                <Button tabindex="2" on:click={shareResults}>
                     <Label>Share Results</Label>
                 </Button>
             {/if}
