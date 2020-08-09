@@ -2,21 +2,78 @@
   import Card, {Content, PrimaryAction, Media, MediaContent, Actions, ActionButtons, ActionIcons} from '@smui/card';
   import Button, {Label} from '@smui/button';
   import IconButton, {Icon} from '@smui/icon-button';
+  import IconTextField from '@smui/textfield/icon/index';
+  import Textfield from '@smui/textfield';
+  import HelperText from '@smui/textfield/helper-text'
 
   import Radio from '@smui/radio';
   import FormField from '@smui/form-field';
   import Slider from '@smui/slider'
-  const axios = require('axios')
+  const http = require('https')
 
   let calculate_side = (c) =>  Math.sqrt(Math.pow(c, 2)/2)
 
-
+  let email_address = {
+      value: "",
+      dirty: false,
+      invalid: true,
+      message: ""
+  };
   let shared_results = false;
 
   let shareResults = function(){
 
       window.location=`https://airtable.com/shrFjIMkvj7dC549W?prefill_Action=${action}&prefill_Process=${process}&prefill_People=${people}&prefill_Ideas=${ideas}`
       shared_results = true;
+  }
+  let emailResults = function(){
+      if(email_address.invalid == false && email_address.dirty == true && email_address.value != ""){
+        var options = {
+            "method": "POST",
+            "port": null,
+            "path": "/.netlify/functions/email",
+            "headers": {
+                "content-type": "application/json",
+                "content-length": "69"
+            }
+            };
+
+            var req = http.request(options, function (res) {
+            var chunks = [];
+
+            res.on("data", function (chunk) {
+                chunks.push(chunk);
+            });
+
+            res.on("end", function () {
+                var body = Buffer.concat(chunks);
+                email_address = {
+                    value: "",
+                    dirty: false,
+                    invalid: true,
+                    message: `Sent to ${email_address.value}`
+                }
+            });
+            });
+
+            req.write(JSON.stringify({
+                    "to": email_address.value,
+                    "action": action,
+                    "action_x": action_x,
+                    "action_y": action_y,
+                    "people": people,
+                    "people_x": people_x,
+                    "people_y": people_y,
+                    "process": process,
+                    "process_x": process_x,
+                    "process_y": process_y,
+                    "ideas": ideas,
+                    "ideas_x": ideas_x,
+                    "ideas_y": ideas_y
+                }	
+            ));
+            req.end();
+      }
   }
 
 
@@ -180,12 +237,6 @@ let answer_key = [
 		margin: 1em auto;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-
 
 </style>
 
@@ -238,7 +289,8 @@ let answer_key = [
             <span slot="label">{questions[page]["B"]}</span>
         </FormField>
         {/if}
-        {#if page == 40  }<!--|| true-->
+        {#if page == 40 || true }
+            <center>
             <svg xmlns="http://www.w3.org/2000/svg" 
             xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
             <defs>
@@ -281,13 +333,26 @@ let answer_key = [
             </g>
         </svg>
         <br>
+        <div class="margins">
+            <p>To receive your results by email, type your email address below and click the arrow beside the address.</p>
+            <Textfield tabindex="0" type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="Email Address" style="min-width: 250px;" input$autocomplete="email">
+            {#if email_address.value != ""}
+                <IconTextField tabindex="1" class="material-icons" role="button"  on:click={emailResults}>send</IconTextField>
+            {/if}
+            </Textfield>
+            {#if !email_address.dirty && email_address.message != ""}
+                <p>{email_address.message}</p>
+            {/if}
+            <HelperText validationMsg>That's not a valid email address.</HelperText>
+        </div>
+        </center>
         <center>
             {#if shared_results}
                 <p>Loading...</p>
             {/if}
             {#if !shared_results}
-                <Button on:click={shareResults}>
-                <Label>Share Results</Label>
+                <Button tabindex="2" on:click={shareResults}>
+                    <Label>Share Results</Label>
                 </Button>
             {/if}
         </center>
