@@ -4,6 +4,8 @@
   "description": "A personality test frontend",
   "main": "index.js",
   "scripts": {
+    "dev": "netlify dev",
+    "start:lambda": "netlify-lambda serve functions",
     "build": "webpack",
     "serve": "serve .",
     "watch": "webpack --watch",
@@ -15,7 +17,7 @@
     "@material/typography": "3.1.0",
     "@smui/button": "1.0.0-beta.10",
     "@smui/card": "1.0.0-beta.19",
-    "@smui/form-field": "1.0.0-beta.19",
+    "@smui/form-field": "^1.0.0-beta.19",
     "@smui/radio": "1.0.0-beta.19",
     "@smui/slider": "1.0.0-beta.17",
     "@smui/textfield": "^1.0.0",
@@ -34,6 +36,16 @@
     "webpack-cli": "3.3.7"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.2.2"
+    "@sendgrid/mail": "^7.2.2",
+    "@smui/checkbox": "^1.0.0",
+    "@smui/data-table": "^1.0.0",
+    "@smui/dialog": "^1.0.0",
+    "@smui/select": "^1.0.0",
+    "countries-list": "^2.5.6",
+    "languages-list": "^1.0.2",
+    "mdbsvelte": "^1.0.10",
+    "mongodb": "^3.6.3",
+    "professions": "^1.0.2",
+    "svelte-flex": "^1.2.0"
   }
 }

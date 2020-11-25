@@ -1,4 +1,5 @@
 const client = require("@sendgrid/mail")
+const { MongoClient } = require("mongodb");
 function getAttachment(body){
   return `<svg xmlns="http://www.w3.org/2000/svg" 
   xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
@@ -401,6 +402,7 @@ function getEmail(body){
                           ${getAttachment(body)}
                           
                           <p>Attached is an image visualizing your results</p>
+                          <p>You may also return to the app and view all your results using this <a href="https://communication-styles-inventory.nemcrunchers.dev/?id=${body.user_id}">link</a></p>
                         </td>
                       </tr>
                     </table>
@@ -455,23 +457,73 @@ exports.handler = function(event, context, callback) {
   const {
     SENDGRID_API_KEY,
     SENDGRID_SENDER_EMAIL,
-    SENDGRID_SENDER_NAME
+    SENDGRID_SENDER_NAME,
+    MONGODB_CONNECTION_STRING
   } = process.env
 
-  const body = JSON.parse(event.body)
+  let body = JSON.parse(event.body)
   const message = body.message
 
   client.setApiKey(SENDGRID_API_KEY)
+  const mongo = new MongoClient(MONGODB_CONNECTION_STRING);
 
-  sendEmail(
-    client,
-    message,
-    SENDGRID_SENDER_EMAIL,
-    SENDGRID_SENDER_NAME,
-    body.to,
-    getEmail(body),
-    Buffer.from(getAttachment(body)).toString('base64')
-  )
-  .then(response => callback(null, { statusCode: response.statusCode }))
-  .catch(err => callback(err, null))
+  let run = async function run() {
+    let result = null;
+    try {
+      await mongo.connect();
+      const database = mongo.db('CommunicationStylesInventory');
+      const collection = database.collection('Results');
+      result = await collection.findOne({_id: body.id});
+    } finally {
+      // Ensures that the client will close when you finish/error
+      await mongo.close();
+      const max_per_cat = 20;
+      const max_r_cat = 212.132;
+      let calculate_side = (c) => Math.sqrt(Math.pow(c, 2) / 2)
+      let action_r = result.ideas * (max_r_cat) / max_per_cat
+      let action_x = Math.round(150 - calculate_side(action_r))
+      let action_y = Math.round(150 - calculate_side(action_r))
+      
+      let ideas_r = result.ideas * (max_r_cat) / max_per_cat
+      let ideas_x = Math.round(150 - calculate_side(ideas_r))
+      let ideas_y = Math.round(150 + calculate_side(ideas_r))
+      
+      let process_r = result.process * (max_r_cat) / max_per_cat
+      let process_x = Math.round(150 + calculate_side(process_r))
+      let process_y = Math.round(150 - calculate_side(process_r))
+      
+      let people_r = result.people * (max_r_cat) / max_per_cat
+      let people_x = Math.round(150 + calculate_side(people_r))
+      let people_y = Math.round(150 + calculate_side(people_r))
+      body = Object.assign(body, {
+        "date": result.date,
+        "user_id": result.user_id,
+        "action": result.action,
+        "action_x": action_x,
+        "action_y": action_y,
+        "people": result.people,
+        "people_x": people_x,
+        "people_y": people_y,
+        "process": result.process,
+        "process_x": process_x,
+        "process_y": process_y,
+        "ideas": result.ideas,
+        "ideas_x": ideas_x,
+        "ideas_y": ideas_y
+      })
+      sendEmail(
+        client,
+        message,
+        SENDGRID_SENDER_EMAIL,
+        SENDGRID_SENDER_NAME,
+        body.to,
+        getEmail(body),
+        Buffer.from(getAttachment(body)).toString('base64')
+      )
+      .then(response => callback(null, { statusCode: response.statusCode }))
+      .catch(err => callback(err, null))
+    }
+  }
+  run().catch(console.dir);
+
 }

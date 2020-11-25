@@ -4,3 +4,7 @@ yarn-error.log
 /__sapper__/
 /dist/
 package-lock.json
+# Local Netlify folder
+.netlify
+_functions
+.env*
