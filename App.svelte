@@ -241,7 +241,7 @@ if (id) {
 }
 let infoCheck = false
 $: infoInvalid = Object.fromEntries(Object.keys(info).map(key => [key, !info[key] && infoCheck]))
-let page = 38;
+let page = 0;
 let questions = [{
         "A": "I like action",
         "B": "I deal with problems in a systematic way"
