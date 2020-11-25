@@ -657,7 +657,7 @@ p {
     <Slider bind:value="{people}" min={0} max={12} step={1} /> -->
 
     <br>
-            <Dialog bind:this={emailDialog} aria-labelledby="simple-title-email" aria-describedby="simple-content-email">
+            <Dialog bind:this={emailDialog}>
                 <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
                 <Title id="simple-title-email">Email Results</Title>
                 <Content >
