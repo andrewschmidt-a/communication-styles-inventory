@@ -196,7 +196,6 @@ let postResult = async function() {
             "method": "POST",
             "port": null,
             "path": `${BASE_FUNCTIONS_URL}results`,
-            "path": "/.netlify/functions/email",
             "headers": {
                 "content-type": "application/json"
             }
