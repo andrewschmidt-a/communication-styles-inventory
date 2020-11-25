@@ -1,6 +1,6 @@
 const client = require("@sendgrid/mail")
 const { MongoClient } = require("mongodb");
-import { v4 as uuidv4 } from 'uuid';
+const uuidv4 = require('uuid').v4;
 
 exports.handler = function(event, context, callback) {
   const {
