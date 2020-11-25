@@ -657,9 +657,9 @@ p {
     <Slider bind:value="{people}" min={0} max={12} step={1} /> -->
 
     <br>
-            <Dialog bind:this={emailDialog} aria-labelledby="simple-title" aria-describedby="simple-content">
+            <Dialog bind:this={emailDialog} aria-labelledby="simple-title-email" aria-describedby="simple-content-email">
                 <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
-                <Title id="simple-title">Email Results</Title>
+                <Title id="simple-title-email">Email Results</Title>
                 <Content >
                     <Textfield tabindex="0" type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="Email Address" style="min-width: 250px;">
                     </Textfield>
