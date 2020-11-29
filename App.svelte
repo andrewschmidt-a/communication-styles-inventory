@@ -84,8 +84,8 @@ let shareResults = function() {
     window.location = `https://airtable.com/shrFjIMkvj7dC549W?prefill_Action=${action}&prefill_Process=${process}&prefill_People=${people}&prefill_Ideas=${ideas}`
     shared_results = true;
 }
-let BASE_FUNCTIONS_URL = "/.netlify/functions/"
-// let BASE_FUNCTIONS_URL = "http://localhost:9000/"
+// let BASE_FUNCTIONS_URL = "/.netlify/functions/"
+let BASE_FUNCTIONS_URL = "http://localhost:9000/"
 let emailResults = function(request_id) {
   return new Promise(function(resolve, reject){
     if (email_address.invalid == false && email_address.dirty == true && email_address.value != "") {
@@ -699,10 +699,10 @@ p {
                               month: 'numeric',
                               day: 'numeric'
                             }).format(new Date(result.date))}</Cell>
-                          <Cell numeric>{result.action}</Cell>
-                          <Cell numeric>{result.people}</Cell>
-                          <Cell numeric>{result.process}</Cell>
-                          <Cell numeric>{result.ideas}</Cell>
+                          <Cell style="text-align:left;" numeric>{result.action}</Cell>
+                          <Cell style="text-align:left;" numeric>{result.people}</Cell>
+                          <Cell style="text-align:left;" numeric>{result.process}</Cell>
+                          <Cell style="text-align:left;" numeric>{result.ideas}</Cell>
                           <Cell>
                             <IconButton class="material-icons" on:click={() => {
                               email_address.for_id = result._id
