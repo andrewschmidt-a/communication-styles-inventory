@@ -1,8 +1,10 @@
-const client = require("@sendgrid/mail")
+const client = require("@sendgrid/mail");
 const { MongoClient } = require("mongodb");
+const sharp = require('sharp');
 function getAttachment(body){
   return `<svg xmlns="http://www.w3.org/2000/svg" 
   xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
+  
   <defs>
       <clipPath id="_clipPath_rqatKbygh5QZF4AQWI1kvTrCXwUilDez">
           <rect width="300" height="300"/>
@@ -480,7 +482,7 @@ exports.handler = function(event, context, callback) {
       const max_per_cat = 20;
       const max_r_cat = 212.132;
       let calculate_side = (c) => Math.sqrt(Math.pow(c, 2) / 2)
-      let action_r = result.ideas * (max_r_cat) / max_per_cat
+      let action_r = result.action * (max_r_cat) / max_per_cat
       let action_x = Math.round(150 - calculate_side(action_r))
       let action_y = Math.round(150 - calculate_side(action_r))
       
@@ -511,6 +513,7 @@ exports.handler = function(event, context, callback) {
         "ideas_x": ideas_x,
         "ideas_y": ideas_y
       })
+      // let pngPhoto = await sharp().png().toBuffer();
       sendEmail(
         client,
         message,

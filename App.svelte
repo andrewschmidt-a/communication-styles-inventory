@@ -58,9 +58,10 @@ let info = {
     country: null,
     language: null,
     birth_year: null,
-    profession: null,
+    profession: "",
     education: null,
     eula: null,
+    gender: null,
     results: []
 }
 let state = null;
@@ -240,7 +241,7 @@ if (id) {
 }
 let infoCheck = false
 $: infoInvalid = Object.fromEntries(Object.keys(info).map(key => [key, !info[key] && infoCheck]))
-let page = 0;
+let page = 39;
 let questions = [{
         "A": "I like action",
         "B": "I deal with problems in a systematic way"
@@ -698,11 +699,11 @@ p {
                               month: 'numeric',
                               day: 'numeric'
                             }).format(new Date(result.date))}</Cell>
-                          <Cell numeric>{result.action}</Cell>
-                          <Cell numeric>{result.people}</Cell>
-                          <Cell numeric>{result.process}</Cell>
-                          <Cell numeric>{result.ideas}</Cell>
-                          <Cell>
+                          <Cell style="text-align:left;" numeric>{result.action}</Cell>
+                          <Cell style="text-align:left;" numeric>{result.people}</Cell>
+                          <Cell style="text-align:left;" numeric>{result.process}</Cell>
+                          <Cell style="text-align:left;" numeric>{result.ideas}</Cell>
+                          <Cell  style="text-align:center;">
                             <IconButton class="material-icons" on:click={() => {
                               email_address.for_id = result._id
                               emailDialog.open()
@@ -715,7 +716,7 @@ p {
                 <Button on:click={()=> {
                     state = stateEnum.TAKE_TEST
                     }}>
-                    <Label>Retake Test</Label>
+                    <Label>Retake Questionnaire</Label>
                 </Button>
         </Content>
     </Card>
@@ -724,17 +725,18 @@ p {
     <Card style="width: 80%; margin-left: 10%;">
         <Content class="mdc-typography--body2" style="display">
             <h1>Welcome to the Communications Styles Inventory Discovery Application</h1>
-            <p>This app is designed to help you discover your preferred communication style. A report will appear at the end of the questionnairewith a copy sent to the email address that you provide. This app will not store your email address after the session is concluded. </p>
-            <p>You will be asked some demographic questions but this information will not be tied to either your name or your email address. You will be assigned a unique identifier. Kepp this identity in a safe place as it will allow you to review past results.</p>
+            <p>This app is designed to help you discover your preferred communication style. A report will appear at the end of the questionnaire with a copy sent to the email address that you provide. This app will not store your email address after the session is concluded. </p>
+            <p>You will be asked some demographic questions but this information will not be tied to either your name or your email address. In the email, you will be given a unique identifying link
+that will allow you to review your past results.</p>
 
             <Button on:click={()=> {
                 state = stateEnum.CREATE_PROFILE
                 }}>
                 <Label>Begin new session</Label>
             </Button>
-            <Button on:click={()=> loginIdentifierDialog.open()}>
+            <!-- <Button on:click={()=> loginIdentifierDialog.open()}>
                 <Label>Login with identifier</Label>
-            </Button>
+            </Button> -->
 
             <Dialog bind:this={loginIdentifierDialog} aria-labelledby="simple-title" aria-describedby="simple-content">
                 <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
@@ -770,9 +772,9 @@ p {
     <Card style="width: 80%; margin-left: 10%;">
         <Content class="mdc-typography--body2" style="display">
             <center><h1>Demographic Information (will be stored anonymously)</h1></center>
-            <center class="row">
+            <div class="row">
                 <div class="col-md-3 col-xs-12">
-                    <Select enhanced bind:invalid={infoInvalid.country} bind:value={info.country} label="Country of Origin" menu>
+                    <Select enhanced bind:invalid={infoInvalid.country} bind:value={info.country} label="Country*" menu>
                         <Option value=""></Option>
                         {#each Object.keys(countries) as country}
                         <Option value={countries[country].name} selected={info.country === country}>{countries[country].emoji}&nbsp;&nbsp;{countries[country].native}</Option>
@@ -804,18 +806,25 @@ p {
                     </Select>
                 </div>
                 <div class="col-md-3 col-xs-12">
-                    <Select enhanced bind:invalid={infoInvalid.profession} bind:value={info.profession} label="Profession" menu>
+                 <Textfield bind:invalid={infoInvalid.profession}  bind:value={info.profession} label="Profession" style="min-width:200px"></Textfield>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <Select enhanced bind:invalid={infoInvalid.gender} bind:value={info.gender} label="Gender" menu>
                         <Option value=""></Option>
-                        {#each professions as profession}
-                        <Option value={profession} selected={info.profession === profession}>{profession}</Option>
+                        {#each ["Male", "Female"] as gender}
+                        <Option value={gender} selected={info.gender === gender}>{gender}</Option>
                         {/each}
                     </Select>
                 </div>
                 <div class="col-xs-12">
-                    <FormField  bind:invalid={infoInvalid.eula} style="margin-right: 1em;">
-                        <Checkbox bind:checked={info.eula} required />
-                        <span slot="label" style={(infoInvalid.eula)?"color: #b00020;":""}>I agree to sharing this information and understand that it will be stored anonymously<span style="opacity: .7; font-size: xx-small">, and hereby sign away my right to privacy and permit Andrew to follow all my online activity.</span></span>
-                    </FormField>
+                    <small style="align: left;">* Country that best describes your cultural identity</small>
+                    <br>
+                    <center>
+                        <FormField  bind:invalid={infoInvalid.eula} style="margin-right: 1em;">
+                            <Checkbox bind:checked={info.eula} required />
+                            <span slot="label" style={(infoInvalid.eula)?"color: #b00020;":""}>I agree to sharing this information and understand that it will be stored anonymously.</span>
+                        </FormField>
+                    </center>
                 </div>
                 <Button on:click={()=> {
                     id=""
@@ -834,7 +843,7 @@ p {
                     }}>
                     <Label>Start</Label>
                 </Button>
-            </center>
+            </div>
 
         </Content>
     </Card>
@@ -845,7 +854,7 @@ p {
     <Card style="width: 80%; margin-left: 10%;">
         <Content class="mdc-typography--body2" style="display">
             <p><center><strong>Communication Style Inventory</strong></center> </p>
-            <p><left>This application is designed to help you discover your preferred communication style. You will be presented with 40 pairs of statements.  In each pair, select the statement that is most true of you.  Sometimes both statements will be true.  Sometimes neither will be exactly descriptive of you.  Pick the statement that is most true. Your score and communication style preference will appear at the end of the questionnaire. Thank you for your participation.</left> </p>
+            <p><left>You will be presented with 40 pairs of statements.  In each pair, select the statement that is most true of you.  Sometimes both statements will be true.  Sometimes neither will be exactly descriptive of you.  Pick the statement that is most true. Your score and communication style preference will appear at the end of the questionnaire. Thank you for your participation.</left> </p>
 
             <center>
                 <Button on:click={()=> begin = true}>
