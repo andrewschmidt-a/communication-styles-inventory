@@ -4,6 +4,14 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  devServer: {
+    proxy: {
+      "/.netlify": {
+        target: "http://localhost:9000",
+        pathRewrite: { "^/.netlify/functions": "" }
+      }
+    }
+  },
   entry: {
     bundle: path.resolve(__dirname, 'index.js')
   },
