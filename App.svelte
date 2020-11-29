@@ -703,7 +703,7 @@ p {
                           <Cell style="text-align:left;" numeric>{result.people}</Cell>
                           <Cell style="text-align:left;" numeric>{result.process}</Cell>
                           <Cell style="text-align:left;" numeric>{result.ideas}</Cell>
-                          <Cell  style="text-align:right;">
+                          <Cell  style="text-align:center;">
                             <IconButton class="material-icons" on:click={() => {
                               email_address.for_id = result._id
                               emailDialog.open()
