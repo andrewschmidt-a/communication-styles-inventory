@@ -84,8 +84,8 @@ let shareResults = function() {
     window.location = `https://airtable.com/shrFjIMkvj7dC549W?prefill_Action=${action}&prefill_Process=${process}&prefill_People=${people}&prefill_Ideas=${ideas}`
     shared_results = true;
 }
-// let BASE_FUNCTIONS_URL = "/.netlify/functions/"
-let BASE_FUNCTIONS_URL = "http://localhost:9000/"
+let BASE_FUNCTIONS_URL = "/.netlify/functions/"
+// let BASE_FUNCTIONS_URL = "http://localhost:9000/"
 let emailResults = function(request_id) {
   return new Promise(function(resolve, reject){
     if (email_address.invalid == false && email_address.dirty == true && email_address.value != "") {
@@ -716,7 +716,7 @@ p {
                 <Button on:click={()=> {
                     state = stateEnum.TAKE_TEST
                     }}>
-                    <Label>Retake Survey</Label>
+                    <Label>Retake Questionnaire</Label>
                 </Button>
         </Content>
     </Card>
