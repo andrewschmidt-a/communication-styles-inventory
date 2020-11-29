@@ -4,6 +4,7 @@ const sharp = require('sharp');
 function getAttachment(body){
   return `<svg xmlns="http://www.w3.org/2000/svg" 
   xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 300 300" width="300pt" height="300pt">
+  
   <defs>
       <clipPath id="_clipPath_rqatKbygh5QZF4AQWI1kvTrCXwUilDez">
           <rect width="300" height="300"/>
@@ -22,16 +23,16 @@ function getAttachment(body){
       <line x1="150" y1="0" x2="150" y2="300" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
       <line x1="0" y1="150" x2="300" y2="150" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
       <g style="mix-blend-mode:normal;" opacity="0.32">
-          <text transform="matrix(1,0,0,1,44.5,70.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Action: ${body.action}</text>
+          <text transform="matrix(1,0,0,1,44.5,70.777)" style="font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Action: ${body.action}</text>
       </g>
       <g style="mix-blend-mode:normal;" opacity="0.32">
-          <text transform="matrix(1,0,0,1,187.5,70.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Process: ${body.process}</text>
+          <text transform="matrix(1,0,0,1,187.5,70.777)" style="font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Process: ${body.process}</text>
       </g>
       <g style="mix-blend-mode:normal;" opacity="0.32">
-          <text transform="matrix(1,0,0,1,49,251.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Ideas: ${body.ideas}</text>
+          <text transform="matrix(1,0,0,1,49,251.777)" style="font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">Ideas: ${body.ideas}</text>
       </g>
       <g style="mix-blend-mode:normal;" opacity="0.32">
-          <text transform="matrix(1,0,0,1,192,251.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">People: ${body.people}</text>
+          <text transform="matrix(1,0,0,1,192,251.777)" style="font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">People: ${body.people}</text>
       </g>
       <circle vector-effect="non-scaling-stroke" cx="${body.action_x}" cy="${body.action_y}" r="4" fill="rgb(255,0,0)"/>
       <circle vector-effect="non-scaling-stroke" cx="${body.ideas_x}" cy="${body.ideas_y}" r="4" fill="rgb(255,0,0)"/>
