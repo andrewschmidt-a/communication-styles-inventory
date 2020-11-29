@@ -58,7 +58,7 @@ let info = {
     country: null,
     language: null,
     birth_year: null,
-    profession: null,
+    profession: "",
     education: null,
     eula: null,
     gender: null,
@@ -806,7 +806,7 @@ that will allow you to review your past results.</p>
                     </Select>
                 </div>
                 <div class="col-md-3 col-xs-12">
-                 <Textfield bind:invalid={infoInvalid.profession} updateInvalid bind:value={info.profession} label="Profession" style="min-width:200px"></Textfield>
+                 <Textfield bind:invalid={infoInvalid.profession}  bind:value={info.profession} label="Profession" style="min-width:200px"></Textfield>
                 </div>
                 <div class="col-md-3 col-xs-12">
                     <Select enhanced bind:invalid={infoInvalid.gender} bind:value={info.gender} label="Gender" menu>
