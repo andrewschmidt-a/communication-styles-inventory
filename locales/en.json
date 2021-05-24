@@ -1,0 +1,211 @@
+{
+    "app": {
+        "title": "Communication Styles Inventory",
+        "welcome": "Welcome to the Communications Styles Inventory Discovery Application",
+        "description": "This app is designed to help you discover your preferred communication style. A report will appear at the end of the questionnaire with a copy sent to the email address that you provide. This app will not store your email address after the session is concluded.",
+        "demographics": "You will be asked some demographic questions but this information will not be tied to either your name or your email address. In the email, you will be given a unique identifying link that will allow you to review your past results.",
+        "instructions": "You will be presented with 40 pairs of statements.  In each pair, select the statement that is most true of you.  Sometimes both statements will be true.  Sometimes neither will be exactly descriptive of you.  Pick the statement that is most true. Your score and communication style preference will appear at the end of the questionnaire. Thank you for your participation.",
+        "emailResults": "To receive your results by email, type your email address below and click the arrow beside the address."
+    },
+    "labels":{
+        "begin": "Begin a new session",
+        "login": "Login",
+        "cancel": "Cancel",
+        "start": "Start",
+        "email": "Email Address",
+        "share": "Share",
+        "back": "Back"
+    },
+    "messages":{
+        "invalidEmail": "That's an invalid email address"
+    },
+    "demographics": {
+        "title": "Demographic Information (will be stored anonymously)",
+        "eula": "I agree to sharing this information and understand that it will be stored anonymously.",
+        "gender": {
+            "male": "Male",
+            "female": "Female",
+            "other": "Other",
+            "label": "Gender"
+        },
+        "education": {
+            "label": "Education",
+            "highschool": "High school",
+            "university": "University degree",
+            "graduate": "Graduate degree",
+            "doctorate": "Doctorate degree"
+        },
+        "birthyear": "Birth Year",
+        "country": "Country",
+        "language": "Language",
+        "countryExplain": "Country that best describes your cultural identity"
+    },
+    "categories":{
+        "action": "Action",
+        "people": "People",
+        "process": "Process",
+        "ideas": "Ideas"
+    },
+    "questions":[
+        {
+            "A": "I like action",
+            "B": "I deal with problems in a systematic way"
+        },
+        {
+            "A": "I enjoy change very much",
+            "B": "I believe that teams are more effective than individuals"
+        },
+        {
+            "A": "I enjoy working with people",
+            "B": "I am more interested in the future than the past"
+        },
+        {
+            "A": "Deadlines are important for me",
+            "B": "I like to attend well organized group meetings"
+        },
+        {
+            "A": "I cannot stand procrastination",
+            "B": "I believe that new ideas have to be tested before being used"
+        },
+        {
+            "A": "I am always looking for new possibilities",
+            "B": "I enjoy the stimulation of interaction with others"
+        },
+        {
+            "A": "I want to set up my own objectives",
+            "B": "When I start something I like to go through until the end"
+        },
+        {
+            "A": "I do challenge people around me",
+            "B": "I basically try to understand other people's emotions"
+        },
+        {
+            "A": "I look forward to receiving feedback on my performance",
+            "B": "I find the step-by-step approach very effective"
+        },
+        {
+            "A": "I think I am good at reading people",
+            "B": "I like creative problem solving"
+        },
+        {
+            "A": "I think about the future all the time",
+            "B": "I am sensitive to others' needs"
+        },
+        {
+            "A": "Planning is the key to success",
+            "B": "I become impatient with long deliberations"
+        },
+        {
+            "A": "I am cool under pressure",
+            "B": "I value experience very much"
+        },
+        {
+            "A": "I listen to people",
+            "B": "People say that I am a fast thinker"
+        },
+        {
+            "A": "Cooperation is a key word for me",
+            "B": "I use logical methods to test alternatives"
+        },
+        {
+            "A": "I always question myself",
+            "B": "I like to handle several projects at the same time"
+        },
+        {
+            "A": "I learn by doing",
+            "B": "I believe that my head rules my heart"
+        },
+        {
+            "A": "I do not like details",
+            "B": "I can predict how others may react to a certain action"
+        },
+        {
+            "A": "Thought and analysis should always precede action",
+            "B": "I am able to assess the climate of a group"
+        },
+        {
+            "A": "I perceive myself as decisive",
+            "B": "I have a tendency to start things and not finish them"
+        },
+        {
+            "A": "I search for challenging tasks",
+            "B": "I rely on observation and data"
+        },
+        {
+            "A": "I can express my feelings openly",
+            "B": "I like to design new projects"
+        },
+        {
+            "A": "I enjoy reading very much",
+            "B": "I perceive myself as a helper"
+        },
+        {
+            "A": "I like to focus on one issue at a time",
+            "B": "I like to achieve"
+        },
+        {
+            "A": "I enjoy learning about others",
+            "B": "I like variety"
+        },
+        {
+            "A": "Facts speak for themselves",
+            "B": "I use my imagination as much as possible"
+        },
+        {
+            "A": "I am impatient with long, slow assignments",
+            "B": "My mind never stops working"
+        },
+        {
+            "A": "Key decisions have to be made in a cautious way",
+            "B": "I strongly believe that people need each other to get work done"
+        },
+        {
+            "A": "I usually make decisions without thinking too much",
+            "B": "Emotions create problems"
+        },
+        {
+            "A": "I like to be liked by others",
+            "B": "I can put two and two together very quickly"
+        },
+        {
+            "A": "I try out my new ideas on people",
+            "B": "I believe in the scientific approach"
+        },
+        {
+            "A": "I like to get things done",
+            "B": "Good relationships are essential"
+        },
+        {
+            "A": "I am impulsive",
+            "B": "I accept differences in people"
+        },
+        {
+            "A": "I like to be intellectually stimulated",
+            "B": "Communicating with people is an end in itself"
+        },
+        {
+            "A": "I like to organize",
+            "B": "I usually jump from one task to another"
+        },
+        {
+            "A": "Self-fulfilment is a key word for me",
+            "B": "Talking and working with people is a creative act"
+        },
+        {
+            "A": "I enjoy playing with ideas",
+            "B": "I dislike to waste my time"
+        },
+        {
+            "A": "I enjoy doing what I am good at",
+            "B": "I learn by interacting with others"
+        },
+        {
+            "A": "I am patient with details",
+            "B": "I find abstractions interesting and enjoyable"
+        },
+        {
+            "A": "I like brief, to-the-point statements",
+            "B": "I feel confident in myself"
+        }
+    ]
+}
