@@ -15,6 +15,8 @@ init({
 if(language){
     locale.set(language);
 }
+let localeChoice = language
+$: if(localeChoice != language) {window.location.replace("?lng="+localeChoice);}
 
 
 // ...
@@ -100,6 +102,11 @@ let email_address = {
     message: ""
 };
 let shared_results = false;
+
+let locales = {
+    en: "English",
+    fr: "Français"
+}
 
 let shareResults = function() {
 
@@ -589,6 +596,18 @@ p {
             <p>{$_('app.description')}</p>
             <p>{$_('app.demographics')}</p>
 
+            <center>
+                <div class="row">
+                    <div class="col-md-5 col-xs-12"></div>
+                    <div class="col-md-2 col-xs-12">
+                        <Select enhanced bind:value={localeChoice} label="{$_('demographics.language')}*" menu>
+                            {#each Object.keys(locales) as locale}
+                            <Option value={locale} selected={localeChoice === locale}>{locales[locale]}</Option>
+                            {/each}
+                        </Select>
+                    </div>
+                </div>
+            </center>
             <Button on:click={()=> {
                 state = stateEnum.CREATE_PROFILE
                 }}>
@@ -717,13 +736,14 @@ p {
     <Card style="width: 80%; margin-left: 10%;">
         <Content class="mdc-typography--body2" style="display">
             <p><center><strong>{$_('app.title')}</strong></center> </p>
-            <p><left>{$_('app.instructions')}</left> </p>
+            <p><left>{$_('app.instructions')}</left></p>
 
             <center>
                 <Button on:click={()=> begin = true}>
                     <Label>{$_('labels.start')}</Label>
                 </Button>
             </center>
+            
         </Content>
     </Card>
     {/if}

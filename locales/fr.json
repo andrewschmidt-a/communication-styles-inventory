@@ -1,211 +1,211 @@
 {
     "app": {
         "title": "Inventaire des styles de communication",
-        "welcome": "Bienvenue à l'application de découverte de l'inventaire des styles de communication",
-        "description": "Cette application est conçue pour vous aider à découvrir votre style de communication préféré. Un rapport apparaîtra à la fin du questionnaire et une copie sera envoyée à l'adresse électronique que vous aurez fournie. Cette application ne conservera pas votre adresse électronique après la fin de la session.",
-        "demographics": "Quelques questions démographiques vous seront posées, mais ces informations ne seront pas liées à votre nom ou à votre adresse électronique. Dans l'e-mail, vous recevrez un lien d'identification unique qui vous permettra de consulter vos résultats antérieurs.",
-        "instructions": "On vous présentera 40 paires d'affirmations. Dans chaque paire, choisissez l'affirmation qui est la plus vraie pour vous. Parfois, les deux affirmations seront vraies. Parfois, aucune ne vous décrira exactement. Choisissez l'affirmation qui est la plus vraie. Votre score et votre style de communication préféré apparaîtront à la fin du questionnaire. Nous vous remercions de votre participation. ",
-        "emailResults": "Pour recevoir vos résultats par e-mail, tapez votre adresse e-mail ci-dessous et cliquez sur la flèche à côté de l'adresse. "
+        "welcome": "Bienvenue au programme de découverte de l'Inventaire des styles de communication.",
+        "description": "Ce programme a été conçu pour vous aider à découvrir votre style préféré de communication. Un rapport apparaitra en fin de questionnaire et vous pourrez en recevoir une copie à l'adresse électronique que vous communiquerez. Ce programme ne conservera pas votre adresse électronique une fois la session terminée.",
+        "demographics": "Vous trouverez quelques questions d'ordre démographique, mais ces renseignements ne seront liés ni à votre nom ni à votre adresse électronique. Vous recevrez dans votre courriel un lien d'identification qui vous sera unique et qui vous permettra de voir vos résultats précédents.",
+        "instructions": "Vous verrez 40 paires de phrases. Dans chaque paire, il faudra choisir la phrase qui vous représente le mieux. Dans certains cas, les deux phrases seront vraies. Dans d'autres cas, aucune des deux phrases ne correspondra vraiment à une bonne description de vous-même. Choisissez alors la phrase qui se rapproche le plus de la vérité. Votre score et votre style de communication préféré apparaitront à la fin du questionnaire. Merci de votre participation.",
+        "emailResults": "Pour recevoir vos résultats par courriel, veuillez taper ci-dessous votre adresse électronique puis cliquer sur la flèche à côté de l'adresse."
     },
     "labels":{
-        "begin": "Commencer une nouvelle session",
-        "login": "Connexion",
+        "begin": "Commencer une nouvelle session.",
+        "login": "Ouvrir la session",
         "cancel": "Annuler",
-        "start": "Début",
+        "start": "Commencer",
         "email": "Adresse électronique",
         "share": "Partager",
-        "back": "Retour"
+        "back": "Retourner à l'étape précédente"
     },
     "messages":{
-        "invalidEmail": "C'est une adresse email invalide"
+        "invalidEmail": "Cette adresse électronique n'est pas valable."
     },
     "demographics": {
-        "title": "Informations démographiques (seront stockées de manière anonyme)",
-        "eula": "J'accepte de partager ces informations et je comprends qu'elles seront stockées de manière anonyme.",
+        "title": "Renseignements démographiques (enregistrés anonymement)",
+        "eula": "J'accepte de partager ces renseignements et je comprends que leur enregistrement se fera anonymement.",
         "gender": {
-            "male": "Homme",
-            "female": "Femme",
+            "male": "Masculin",
+            "female": "Feminin",
             "other": "Autre",
-            "label": "Genre"
+            "label": "Sexe"
         },
         "education": {
-            "label": "Éducation",
-            "highschool": "Lycée",
-            "university": "Diplôme universitaire",
-            "graduate": "Diplôme d'études supérieures",
+            "label": "Education",
+            "highschool": "Education secondaire",
+            "university": "Etudes tertiaires",
+            "graduate": "Diplôme universitaire",
             "doctorate": "Doctorat"
         },
         "birthyear": "Année de naissance",
         "country": "Pays",
         "language": "Langue",
-        "countryExplain": "Pays qui décrit le mieux votre identité culturelle"
+        "countryExplain": "Pays correspondant le mieux à votre identité culturelle"
     },
     "categories":{
         "action": "Action",
-        "people": "Peuple",
+        "people": "Relations personnelles",
         "process": "Processus",
         "ideas": "Idées"
     },
     "questions":[
         {
-            "A": "J'aime l'action",
-            "B": "Je traite les problèmes de manière systématique"
+            "A": "J'aime l'action.",
+            "B": "Je traite les problèmes de manière systématique."
         },
         {
-            "A": "J'aime beaucoup le changement",
-            "B": "Je crois que les équipes sont plus efficaces que les individus"
+            "A": "J'aime beaucoup les changements.",
+            "B": "Je crois que les équipes sont plus efficaces que les personnes individuelles."
         },
         {
-            "A": "J'aime travailler avec les gens",
-            "B": "Je suis plus intéressé par l'avenir que par le passé."
+            "A": "J'aime travailler avec les gens.",
+            "B": "L'avenir m'intéresse plus que le passé."
         },
         {
-            "A": "Les délais sont importants pour moi",
-            "B": "J'aime assister à des réunions de groupe bien organisées"
+            "A": "D'après moi, il est important de se tenir aux délais convenus.",
+            "B": "J'aime participer à des reunions de groupes bien organisées."
         },
         {
-            "A": "Je ne supporte pas la procrastination",
-            "B": "Je crois que les nouvelles idées doivent être testées avant d'être utilisées."
+            "A": "Je ne supporte pas la procrastination.",
+            "B": "Je crois qu'il faut tester les nouvelles idées avant de les appliquer."
         },
         {
-            "A": "Je suis toujours à la recherche de nouvelles possibilités",
-            "B": "J'aime la stimulation de l'interaction avec les autres"
+            "A": "Je suis toujours à la recherche de nouvelles possibilités.",
+            "B": "J'aime la stimulation provenant des interactions avec les autres."
         },
         {
-            "A": "Je veux fixer mes propres objectifs",
-            "B": "Quand je commence quelque chose, j'aime aller jusqu'au bout."
+            "A": "Je veux pouvoir mettre en place mes propres objectifs.",
+            "B": "Lorsque je commence une chose, j'aime la poursuivre jusqu'au bout."
         },
         {
-            "A": "Je défie les gens autour de moi",
-            "B": "J'essaie essentiellement de comprendre les émotions des autres."
+            "A": "Je suis prêt(e) à questionner ce que j'entends autour de moi.",
+            "B": "J'essaie en fait de comprendre ce que les autres ressentent."
         },
         {
-            "A": "Je suis impatient de recevoir un retour d'information sur mes performances",
-            "B": "Je trouve l'approche étape par étape très efficace."
+            "A": "Je me réjouis de recevoir des commentaires sur mes activités.",
+            "B": "Je trouve que l'approche d'étape en étape est très efficace."
         },
         {
-            "A": "Je pense que je suis bon pour lire les gens",
-            "B": "J'aime la résolution créative de problèmes"
+            "A": "Je crois bien savoir lire les gens.",
+            "B": "J'aime l'emploi de créativité pour résoudre les problèmes."
         },
         {
-            "A": "Je pense à l'avenir tout le temps",
-            "B": "Je suis sensible aux besoins des autres"
+            "A": "Je pense sans arrêt à l'avenir.",
+            "B": "Je suis sensible aux besoins des autres."
         },
         {
-            "A": "La planification est la clé du succès",
-            "B": "Je deviens impatient avec les longues délibérations"
+            "A": "La planification est la clé du succès.",
+            "B": "Je perds patience dans les longues délibérations."
         },
         {
-            "A": "Je suis cool sous la pression",
-            "B": "J'accorde une grande importance à l'expérience"
+            "A": "Je reste calme sous pression.",
+            "B": "J'attribue une grande valeur à l'expérience."
         },
         {
-            "A": "J'écoute les gens",
-            "B": "Les gens disent que je suis un penseur rapide"
+            "A": "J'écoute les gens.",
+            "B": "Les gens disent que j'arrive à penser rapidement."
         },
         {
-            "A": "La coopération est un mot clé pour moi",
-            "B": "J'utilise des méthodes logiques pour tester les alternatives"
+            "A": "La coopération est un mot clé pour moi.",
+            "B": "J'utilise la logique pour tester différentes solutions."
         },
         {
-            "A": "Je me pose toujours des questions",
-            "B": "J'aime gérer plusieurs projets en même temps."
+            "A": "Je me remets toujours en question.",
+            "B": "J'aime jongler avec plusieurs projets en même temps."
         },
         {
-            "A": "J'apprends en faisant",
-            "B": "Je crois que ma tête dirige mon cœur"
+            "A": "J'apprends par la pratique.",
+            "B": "Je crois que ma tête gouverne mon coeur."
         },
         {
-            "A": "Je n'aime pas les détails",
-            "B": "Je peux prédire comment les autres vont réagir à une certaine action."
+            "A": "Je n'aime pas les détails.",
+            "B": "Je peux prédire comment les gens risquent de réagir face à certaines actions."
         },
         {
-            "A": "La réflexion et l'analyse doivent toujours précéder l'action",
-            "B": "Je suis capable d'évaluer le climat d'un groupe"
+            "A": "La réflexion et l'analyse devraient toujours précéder l'action.",
+            "B": "Je sais évaluer l'atmosphère d'un groupe."
         },
         {
-            "A": "Je me perçois comme une personne décisive",
-            "B": "J'ai tendance à commencer des choses et à ne pas les finir."
+            "A": "Je pense que je suis quelqu'un de décisif.",
+            "B": "J'ai tendance à commencer des choses mais à ne pas les finir."
         },
         {
-            "A": "Je recherche des tâches stimulantes",
-            "B": "Je me base sur l'observation et les données"
+            "A": "Je recherche des tâches qui représentent un challenge.",
+            "B": "Je me base sur l'observation et sur les faits."
         },
         {
-            "A": "Je peux exprimer ouvertement mes sentiments",
-            "B": "J'aime concevoir de nouveaux projets"
+            "A": "Je peux exprimer ouvertement mes sentiments.",
+            "B": "J'aime concevoir de nouveaux projets."
         },
         {
-            "A": "J'aime beaucoup lire",
-            "B": "Je me perçois comme une aide"
+            "A": "J'aime beaucoup lire.",
+            "B": "Je me vois comme un(e) aide."
         },
         {
-            "A": "J'aime me concentrer sur une seule question à la fois.",
-            "B": "J'aime réaliser"
+            "A": "J'aime me concentrer sur un problème à la fois.",
+            "B": "J'aime réussir."
         },
         {
-            "A": "J'aime apprendre à connaître les autres",
-            "B": "J'aime la variété"
+            "A": "J'aime apprendre à connaitre les autres.",
+            "B": "J'aime la variété."
         },
         {
-            "A": "Les faits parlent d'eux-mêmes",
-            "B": "J'utilise mon imagination autant que possible"
+            "A": "Les faits parlent d'eux-mêmes.",
+            "B": "J'utilise autant que possible mon imagination."
         },
         {
-            "A": "Je suis impatient avec les missions longues et lentes.",
-            "B": "Mon esprit ne cesse de travailler"
+            "A": "Je perds patience quand les missions sont longues et lentes.",
+            "B": "Mon cerveau ne s'arrête jamais de travailler."
         },
         {
-            "A": "Les décisions clés doivent être prises de manière prudente.",
-            "B": "Je crois fermement que les gens ont besoin les uns des autres pour accomplir leur travail."
+            "A": "Les décisions clés doivent se faire avec prudence.",
+            "B": "Je crois fermement que les gens ont besoin les uns des autres pour faire le travail."
         },
         {
-            "A": "Je prends généralement des décisions sans trop réfléchir",
-            "B": "Les émotions créent des problèmes"
+            "A": "En général, je prends des décisions sans trop réfléchir.",
+            "B": "Les émotions créent des problèmes."
         },
         {
-            "A": "J'aime être apprécié des autres",
-            "B": "Je peux assembler deux et deux ensemble très rapidement"
+            "A": "J'aime être aimé(e) des autres.",
+            "B": "Je peux très rapidement faire des rapprochements."
         },
         {
-            "A": "J'essaie mes nouvelles idées sur les gens",
-            "B": "Je crois en l'approche scientifique"
+            "A": "J'essaie mes nouvelles idées sur les gens.",
+            "B": "Je crois en une approche scientifique."
         },
         {
-            "A": "J'aime faire avancer les choses",
-            "B": "De bonnes relations sont essentielles"
+            "A": "J'aime faire avancer les choses.",
+            "B": "Les bonnes relations sont primordiales."
         },
         {
-            "A": "Je suis impulsif",
-            "B": "J'accepte les différences entre les personnes"
+            "A": "Je suis impulsif(ive)",
+            "B": "J'accepte les differences dans les gens."
         },
         {
-            "A": "J'aime être stimulé intellectuellement",
-            "B": "Communiquer avec les gens est une fin en soi"
+            "A": "J'aime la stimulation intellectuelle.",
+            "B": "Communiquer avec les gens est une fin en soi."
         },
         {
-            "A": "J'aime organiser",
-            "B": "Je passe généralement d'une tâche à l'autre"
+            "A": "J'aime faire de l'organisation.",
+            "B": "Je saute en général d'une tâche à une autre."
         },
         {
-            "A": "L'épanouissement personnel est un mot clé pour moi.",
-            "B": "Parler et travailler avec les gens est un acte créatif."
+            "A": "Mon épanouissement personnel est particulièrement important pour moi.",
+            "B": "Parler et travailler avec les gens sont des activités créatives."
         },
         {
-            "A": "J'aime jouer avec les idées",
-            "B": "Je n'aime pas perdre mon temps"
+            "A": "J'aime jouer avec les idées.",
+            "B": "Je n'aime pas perdre mon temps."
         },
         {
-            "A": "J'aime faire ce pour quoi je suis doué",
-            "B": "J'apprends en interagissant avec les autres"
+            "A": "J'aime faire ce que je sais bien faire.",
+            "B": "J'apprends par mes interactions avec les autres."
         },
         {
-            "A": "Je suis patient avec les détails",
-            "B": "Je trouve les abstractions intéressantes et agréables"
+            "A": "J'ai de la patience pour les détails.",
+            "B": "J'aime les idées abstraites et je les trouve intéressantes."
         },
         {
-            "A": "J'aime les déclarations brèves et directes",
-            "B": "J'ai confiance en moi"
+            "A": "J'aime les communications brèves et pertinentes.",
+            "B": "J'ai confiance en moi."
         }
     ]
 }

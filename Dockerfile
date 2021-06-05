@@ -1,5 +1,27 @@
-FROM node:alpine as build
+FROM node:12-alpine as build
 WORKDIR /src
+RUN apk --no-cache --virtual .build-deps add python2\
+        make \
+        g++ \
+        gcc \
+    && apk --no-cache --virtual .canvas-build-deps add \
+        build-base \
+        cairo-dev \
+        jpeg-dev \
+        pango-dev \
+        giflib-dev \
+        pixman-dev \
+        pangomm-dev \
+        libjpeg-turbo-dev \
+        freetype-dev \
+    && apk --no-cache add \
+        pixman \
+        cairo \
+        pango \
+        giflib
+RUN npm update
+RUN npm install -g node-gyp@3.8.0
+COPY ./package-lock.json /src/
 COPY ./package.json /src/
 RUN npm install
 COPY . /src/
