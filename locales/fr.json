@@ -8,7 +8,7 @@
         "emailResults": "Pour recevoir vos résultats par courriel, veuillez taper ci-dessous votre adresse électronique puis cliquer sur la flèche à côté de l'adresse."
     },
     "labels":{
-        "begin": "Commencer une nouvelle session.",
+        "begin": "Commencer une nouvelle session",
         "login": "Ouvrir la session",
         "cancel": "Annuler",
         "start": "Commencer",

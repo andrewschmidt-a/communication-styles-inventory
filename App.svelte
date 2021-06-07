@@ -157,35 +157,35 @@ let emailResults = function(request_id) {
   })
 }
 let createProfile = function() {
-    // var options = {
-    //     "method": "POST",
-    //     "port": null,
-    //         "path": `${BASE_FUNCTIONS_URL}users`,
-    //     "headers": {
-    //         "content-type": "application/json"
-    //     }
-    // };
+    var options = {
+        "method": "POST",
+        "port": null,
+            "path": `${BASE_FUNCTIONS_URL}users`,
+        "headers": {
+            "content-type": "application/json"
+        }
+    };
 
-    // var req = http.request(options, function(res) {
-    //     if (res.statusCode == 200) {
-            // var chunks = [];
+    var req = http.request(options, function(res) {
+        if (res.statusCode == 200) {
+            var chunks = [];
 
-            // res.on("data", function(chunk) {
-            //     chunks.push(chunk);
-            // });
+            res.on("data", function(chunk) {
+                chunks.push(chunk);
+            });
 
-            // res.on("end", function() {
-                // var body = JSON.parse(Buffer.concat(chunks));
+            res.on("end", function() {
+                var body = JSON.parse(Buffer.concat(chunks));
 
-                // id = body._id
+                id = body._id
                 state = stateEnum.TAKE_TEST
-            // });
+            });
 
-    //     }
-    // });
+        }
+    });
 
-    // req.write(JSON.stringify(info));
-    // req.end();
+    req.write(JSON.stringify(info));
+    req.end();
 }
 
 let getProfile = async function(id) {
@@ -575,7 +575,7 @@ p {
                             <IconButton class="material-icons" on:click={() => {
                               email_address.for_id = result._id
                               emailDialog.open()
-                            }} title="Send Email">send</IconButton>
+                            }} title="{$_('labels.sendEmail')}">send</IconButton>
                           </Cell>
                       </Row>
                       {/each}
@@ -584,7 +584,7 @@ p {
                 <Button on:click={()=> {
                     state = stateEnum.TAKE_TEST
                     }}>
-                    <Label>Retake Questionnaire</Label>
+                    <Label>{$_("labels.retake")}</Label>
                 </Button>
         </Content>
     </Card>

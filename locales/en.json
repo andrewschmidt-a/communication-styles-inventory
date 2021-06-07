@@ -14,7 +14,9 @@
         "start": "Start",
         "email": "Email Address",
         "share": "Share",
-        "back": "Back"
+        "back": "Back",
+        "retake": "Retake Questionnaire",
+        "sendEmail": "Send Email"
     },
     "messages":{
         "invalidEmail": "That's an invalid email address"
