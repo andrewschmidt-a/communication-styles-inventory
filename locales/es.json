@@ -1,211 +1,211 @@
 {
-	"app": {
-		"title": "Inventario de estilos de comunicación",
-		"welcome": "Bienvenido a la aplicación de descubrimiento de inventario de estilos de comunicaciones",
-		"description": "Esta aplicación está diseñada para ayudarlo a descubrir su estilo de comunicación preferido. Aparecerá un informe al final del cuestionario con una copia enviada a la dirección de correo electrónico que proporcione. Esta aplicación no almacenará su dirección de correo electrónico una vez finalizada la sesión.",
-		"demographics": "Se le harán algunas preguntas demográficas, pero esta información no estará vinculada ni a su nombre ni a su dirección de correo electrónico. En el correo electrónico, se le proporcionará un enlace de identificación único que le permitirá revisar sus resultados anteriores.",
-		"instructions": "Se le presentarán 40 pares de declaraciones. En cada par, seleccione la afirmación que sea más cierta para usted. A veces, ambas afirmaciones serán ciertas. A veces, ninguno de los dos será exactamente descriptivo de ti. Elija la afirmación que sea más cierta. Su puntuación y preferencia de estilo de comunicación aparecerán al final del cuestionario. Gracias por su participación.",
-		"emailResults": "Para recibir sus resultados por correo electrónico, escriba su dirección de correo electrónico a continuación y haga clic en la flecha junto a la dirección."
-	},
-	"labels": {
-		"begin": "Iniciar una nueva sesión",
-		"login": "Acceso",
-		"cancel": "Cancelar",
-		"start": "Comienzo",
-		"email": "Dirección de correo electrónico",
-		"share": "Cuota",
-		"back": "atrás"
-	},
-	"messages": {
-		"invalidEmail": "Esa es una dirección de correo electrónico no válida"
-	},
-	"demographics": {
-		"title": "Información demográfica (se almacenará de forma anónima)",
-		"eula": "Acepto compartir esta información y entiendo que se almacenará de forma anónima.",
-		"gender": {
-			"male": "Masculino",
-			"female": "Mujer",
-			"other": "Otro",
-			"label": "Género"
-		},
-		"education": {
-			"label": "Educación",
-			"highschool": "Escuela secundaria",
-			"university": "Titulo universitario",
-			"graduate": "Diploma de graduación",
-			"doctorate": "Doctorado"
-		},
-		"birthyear": "Año de nacimiento",
-		"country": "País",
-		"language": "Idioma",
-		"countryExplain": "País que mejor describe su identidad cultural"
-	},
-	"categories": {
-		"action": "Acción",
-		"people": "Personas",
-		"process": "Proceso",
-		"ideas": "Ideas"
-	},
-	"questions": [
-		{
-			"A": "Me gusta la accion",
-			"B": "Me ocupo de los problemas de forma sistemática."
-		},
-		{
-			"A": "Disfruto mucho el cambio",
-			"B": "Creo que los equipos son más efectivos que los individuos"
-		},
-		{
-			"A": "Disfruto trabajar con la gente",
-			"B": "Me interesa más el futuro que el pasado"
-		},
-		{
-			"A": "Los plazos son importantes para mi",
-			"B": "Me gusta asistir a reuniones grupales bien organizadas."
-		},
-		{
-			"A": "No puedo soportar la dilación",
-			"B": "Creo que las nuevas ideas deben probarse antes de ser utilizadas."
-		},
-		{
-			"A": "Siempre estoy buscando nuevas posibilidades",
-			"B": "Disfruto de la estimulación de la interacción con los demás."
-		},
-		{
-			"A": "Quiero establecer mis propios objetivos",
-			"B": "Cuando empiezo algo, me gusta pasar hasta el final"
-		},
-		{
-			"A": "Desafío a la gente a mi alrededor",
-			"B": "Básicamente trato de entender las emociones de otras personas."
-		},
-		{
-			"A": "Espero recibir comentarios sobre mi desempeño",
-			"B": "Encuentro el enfoque paso a paso muy efectivo"
-		},
-		{
-			"A": "Creo que soy bueno leyendo a la gente",
-			"B": "Me gusta la resolución creativa de problemas"
-		},
-		{
-			"A": "Pienso en el futuro todo el tiempo",
-			"B": "Soy sensible a las necesidades de los demás."
-		},
-		{
-			"A": "La planificación es la clave del éxito",
-			"B": "Me impaciento con largas deliberaciones"
-		},
-		{
-			"A": "Estoy fresco bajo presión",
-			"B": "Valoro mucho la experiencia"
-		},
-		{
-			"A": "Escucho a la gente",
-			"B": "La gente dice que soy un pensador rápido"
-		},
-		{
-			"A": "La cooperación es una palabra clave para mí",
-			"B": "Utilizo métodos lógicos para probar alternativas."
-		},
-		{
-			"A": "Siempre me cuestiono",
-			"B": "Me gusta manejar varios proyectos al mismo tiempo."
-		},
-		{
-			"A": "Aprendo haciendo",
-			"B": "Creo que mi cabeza gobierna mi corazón"
-		},
-		{
-			"A": "No me gustan los detalles",
-			"B": "Puedo predecir cómo reaccionarán los demás ante una determinada acción."
-		},
-		{
-			"A": "El pensamiento y el análisis siempre deben preceder a la acción",
-			"B": "Soy capaz de evaluar el clima de un grupo."
-		},
-		{
-			"A": "Me percibo decisivo",
-			"B": "Tengo tendencia a empezar las cosas y no terminarlas."
-		},
-		{
-			"A": "Busco tareas desafiantes",
-			"B": "Confío en la observación y los datos"
-		},
-		{
-			"A": "Puedo expresar mis sentimientos abiertamente",
-			"B": "Me gusta diseñar nuevos proyectos"
-		},
-		{
-			"A": "Disfruto mucho leyendo",
-			"B": "Me percibo como un ayudante"
-		},
-		{
-			"A": "Me gusta concentrarme en un tema a la vez.",
-			"B": "Me gusta lograr"
-		},
-		{
-			"A": "Disfruto aprender sobre los demás",
-			"B": "Me gusta la variedad"
-		},
-		{
-			"A": "Los hechos hablan por si solos",
-			"B": "Uso mi imaginación tanto como puedo"
-		},
-		{
-			"A": "Estoy impaciente con las tareas largas y lentas.",
-			"B": "Mi mente nunca deja de funcionar"
-		},
-		{
-			"A": "Las decisiones clave deben tomarse con cautela",
-			"B": "Creo firmemente que las personas se necesitan unas a otras para hacer el trabajo."
-		},
-		{
-			"A": "Suelo tomar decisiones sin pensar demasiado",
-			"B": "Las emociones crean problemas"
-		},
-		{
-			"A": "Me gusta agradar a los demás",
-			"B": "Puedo juntar dos y dos muy rápidamente"
-		},
-		{
-			"A": "Pruebo mis nuevas ideas en la gente",
-			"B": "Creo en el enfoque científico"
-		},
-		{
-			"A": "Me gusta hacer las cosas",
-			"B": "Las buenas relaciones son esenciales"
-		},
-		{
-			"A": "Soy impulsivo",
-			"B": "Acepto las diferencias en la gente"
-		},
-		{
-			"A": "Me gusta que me estimulen intelectualmente",
-			"B": "Comunicarse con la gente es un fin en sí mismo"
-		},
-		{
-			"A": "Me gusta organizar",
-			"B": "Suelo saltar de una tarea a otra"
-		},
-		{
-			"A": "La realización personal es una palabra clave para mí",
-			"B": "Hablar y trabajar con personas es un acto creativo."
-		},
-		{
-			"A": "Disfruto jugando con ideas",
-			"B": "No me gusta perder el tiempo"
-		},
-		{
-			"A": "Disfruto haciendo lo que se me da bien",
-			"B": "Aprendo interactuando con otros"
-		},
-		{
-			"A": "Soy paciente con los detalles",
-			"B": "Encuentro las abstracciones interesantes y agradables"
-		},
-		{
-			"A": "Me gustan las declaraciones breves y directas.",
-			"B": "Me siento confiado en mi mismo"
-		}
-	]
+    "app": {
+        "title": "Inventario de Estilos de comunicación",
+        "welcome": "Bienvenido a la Aplicación de Descubrimiento de Inventario de Estilos de Comunicación",
+        "description": "Esta aplicación está diseñada para ayudarle a descubrir su estilo preferido de comunicación.  Un reporte aparecerá al final del cuestionario con una copia enviada al correo electrónico que Ud. ha provisto.  Esta aplicación no guardará su dirección de correo electrónico después de que la sesión ha terminado.",
+        "demographics": "Se le harán algunas preguntas demográficas pero esta información no será ligada a su nombre o correo electrónico.  Le enviaremos a su correo electrónico un enlace único de identificación que le permitirá revisar sus resultados pasados.",
+        "instructions": "Le presentaremos 40 pares de afirmaciones. En cada par, seleccione la afirmación que es más verdadera para Ud.  Algunas veces ambas afirmaciones serán verdad.  Algunas veces ninguna de ellas le describirá a Ud. exactamente.  Escoja la afirmación que más se acerca a la verdad para Ud.  Su puntaje y estilo de comunicación preferido aparecerá al final del cuestionario.  Gracias por su participación.",
+        "emailResults": "Para recibir sus resultados por correo electrónico, escriba su dirección de correo electrónico debajo y haga clic en la flecha que está junto a la dirección. "
+    },
+    "labels":{
+        "begin": "Iniciar una sesión nueva",
+        "login": "Acceso",
+        "cancel": "Cancelar",
+        "start": "Inicio",
+        "email": "Correo Electrónico",
+        "share": "Compartir",
+        "back": "Atrás"
+    },
+    "messages":{
+        "invalidEmail": "Esta es una dirección Inválida de Correo Electrónico"
+    },
+    "demographics": {
+        "title": "Información Demográfica (Estará guardada anónimamente)",
+        "eula": "Estoy de acuerdo en compartir esta información y entiendo que será guardada de manera anónima.",
+        "gender": {
+            "male": "Masculino",
+            "female": "Femenino",
+            "other": "Otro",
+            "label": "Género"
+        },
+        "education": {
+            "label": "Educación",
+            "highschool": "Secundaria",
+            "university": "Título Universitario",
+            "graduate": "Título de Graduado",
+            "doctorate": "Título de Doctorado"
+        },
+        "birthyear": "Año de Nacimiento",
+        "country": "País",
+        "language": "Idioma",
+        "countryExplain": "País que describe mejor su identidad cultural"
+    },
+    "categories":{
+        "action": "Acción",
+        "people": "Personas",
+        "process": "Proceso",
+        "ideas": "Ideas"
+    },
+    "questions":[
+        {
+            "A": "Me gusta la acción",
+            "B": "Trato con los problemas de manera sistemática"
+        },
+        {
+            "A": "Disfruto mucho del cambio",
+            "B": "Creo que los equipos son más efectivos que un individuo"
+        },
+        {
+            "A": "Disfruto trabajando con personas",
+            "B": "Estoy más interesado en el futuro que en el pasado"
+        },
+        {
+            "A": "Las fechas límites son importantes para mí",
+            "B": "Me gusta atender reuniones de grupo que estén bien organizadas"
+        },
+        {
+            "A": "No puedo soportar la procastinación",
+            "B": "Creo que las ideas nuevas deben ser probadas antes de ser usadas"
+        },
+        {
+            "A": "Siempre estoy buscando nuevas posibilidades",
+            "B": "Disfruto la estimulación que viene de la interacción con otros"
+        },
+        {
+            "A": "Quiero definir mis objetivos propios",
+            "B": "Cuando comienzo algo, me gusta llevarlo a cabo hasta el final"
+        },
+        {
+            "A": "Desafío a la gente a mi alrededor",
+            "B": "Básicamente trato de entender las emociones de la otras personas"
+        },
+        {
+            "A": "Espero recibir comentarios o retroalimentación sobre mi desempeño",
+            "B": "Me parece muy efectivo el enfoque paso-a-paso para realizar tareas"
+        },
+        {
+            "A": "Creo que soy bueno “leyendo” (o interpretando) a la gente",
+            "B": "Me gusta la solución de problemas con creatividad"
+        },
+        {
+            "A": "Pienso en el futuro todo el tiempo",
+            "B": "Soy sensible a las necesidades de los demás"
+        },
+        {
+            "A": "Planear es la clave para el éxito",
+            "B": "No tengo paciencia para deliberaciones largas"
+        },
+        {
+            "A": "Mantengo la calma cuando estoy bajo presión",
+            "B": "Valoro mucho la experiencia"
+        },
+        {
+            "A": "Escucho a las personas",
+            "B": "La gente dice que soy una persona que piensa rápidamente"
+        },
+        {
+            "A": "Cooperación es una palabra clave para mí",
+            "B": "Uso métodos lógicos para probar alternativas"
+        },
+        {
+            "A": "Siempre me cuestiono a mí mismo",
+            "B": "Me gusta manejar varios proyectos al mismo tiempo"
+        },
+        {
+            "A": "Aprendo haciendo",
+            "B": "Creo que mi cabeza gobierna mi corazón"
+        },
+        {
+            "A": "No me gustan los detalles",
+            "B": "Puedo predecir cómo otras personas van a reaccionar ante cierta acción"
+        },
+        {
+            "A": "El pensamiento y el análisis siempre deben preceder a la acción",
+            "B": "Puedo evaluar el ambiente de un grupo"
+        },
+        {
+            "A": "Creo que soy una persona que toma decisiones",
+            "B": "Tengo la tendencia de comenzar cosas y no terminarlas"
+        },
+        {
+            "A": "Busco tareas que sean desafiantes",
+            "B": "Confío en la observación y los datos"
+        },
+        {
+            "A": "Puedo expresar mis emociones abiertamente",
+            "B": "Me gusta diseñar proyectos nuevos"
+        },
+        {
+            "A": "Disfruto muchísimo leyendo",
+            "B": "Me considero un ayudante"
+        },
+        {
+            "A": "Me gusta concentrarme en un tema a la vez",
+            "B": "Me gusta lograr cosas"
+        },
+        {
+            "A": "Disfruto aprendiendo acerca de otros",
+            "B": "Me gusta la variedad"
+        },
+        {
+            "A": "Los hechos hablan por si mismos",
+            "B": "Uso mi imaginación tanto com puedo"
+        },
+        {
+            "A": "Soy impaciente con tareas largas y lentas",
+            "B": "Mi mente nunca para de trabajar"
+        },
+        {
+            "A": "Las decisiones clave deben tomarse con cautela",
+            "B": "Creo firmemente que las personas se necesitan unas a otras para hacer el trabajo"
+        },
+        {
+            "A": "Usualmente tomo decisiones sin pensar demasiado",
+            "B": "Las emociones crean problemas"
+        },
+        {
+            "A": "Me gusta agradar a los demás",
+            "B": "Puedo determinar la verdad de una situación muy rápidamente"
+        },
+        {
+            "A": "Pruebo mis nuevas ideas en la gente",
+            "B": "Creo en el enfoque científico"
+        },
+        {
+            "A": "Me gusta completar y finalizar mis tareas",
+            "B": "Buenas relaciones son esenciales"
+        },
+        {
+            "A": "Soy impulsivo",
+            "B": "Acepto las diferencias en la gente"
+        },
+        {
+            "A": "Me gusta ser estimulado intelectualmente",
+            "B": "Comunicarse con la gente es un fin en sí mismo"
+        },
+        {
+            "A": "Me gusta organizar",
+            "B": "Usualmente salto de una tarea a otra"
+        },
+        {
+            "A": "La realización personal es clave para mí",
+            "B": "Hablar y trabajar con gente es un acto creativo"
+        },
+        {
+            "A": "Disfruto jugando con ideas",
+            "B": "Me disgusta perder tiempo"
+        },
+        {
+            "A": "Disfruto haciendo aquello para lo que soy bueno(a)",
+            "B": "Aprendo interactuando con otros"
+        },
+        {
+            "A": "Tengo paciencia para los detalles",
+            "B": "Encuentro las abstracciones (lo abstracto) interesantes y agradables"
+        },
+        {
+            "A": "Me gustan las declaraciones breves y al grano",
+            "B": "Me siento seguro(a) de mí mismo(a)"
+        }
+    ]
 }

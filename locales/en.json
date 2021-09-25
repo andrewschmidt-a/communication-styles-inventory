@@ -16,7 +16,18 @@
         "share": "Share",
         "back": "Back",
         "retake": "Retake Questionnaire",
-        "sendEmail": "Send Email"
+        "sendEmail": "Send Email",
+        "sentTo": "Sent to:"
+
+    },
+    "email": {
+
+        "emailSubject": "Communication Styles Inventory Results",
+        "greeting": "Hi there,",
+        "yourResultsAre": "Your results are:",
+        "graphic": "Attached is an image visualizing your results",
+        "linkMessage": "You may also return to the app and view all your results using this link"
+
     },
     "messages":{
         "invalidEmail": "That's an invalid email address"
