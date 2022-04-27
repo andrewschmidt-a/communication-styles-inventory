@@ -105,7 +105,7 @@ let shared_results = false;
 
 let locales = {
     en: "English",
-    es: "Español",
+    es: "Españole",
     fr: "Français"
 }
 
