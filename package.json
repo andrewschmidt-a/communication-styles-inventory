@@ -33,7 +33,7 @@
     "svelte": "3.25.1",
     "svelte-loader": "2.13.6",
     "webpack": "4.39.3",
-    "webpack-cli": "3.3.7"
+    "webpack-cli": "3.3.12"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.2.2",
