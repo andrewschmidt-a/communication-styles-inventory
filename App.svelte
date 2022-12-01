@@ -788,16 +788,28 @@ p {
                                                                     <line x1="150" y1="0" x2="150" y2="300" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
                                                                         <line x1="0" y1="150" x2="300" y2="150" vector-effect="non-scaling-stroke" stroke-width="1" stroke="rgb(0,0,0)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3"/>
                                                                             <g style="mix-blend-mode:normal;" opacity="0.32">
-                                                                                <text transform="matrix(1,0,0,1,44.5,70.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">{$_('categories.action')}: {action}</text>
+                                                                                    <text transform="matrix(1,0,0,1,75,70.777)" text-anchor="middle" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">
+                                                                                        <tspan>{$_('categories.action')}</tspan>
+                                                                                        <tspan x="0" y="20">{action}</tspan>
+                                                                                    </text>
                                                                             </g>
                                                                             <g style="mix-blend-mode:normal;" opacity="0.32">
-                                                                                <text transform="matrix(1,0,0,1,187.5,70.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">{$_('categories.process')}: {process}</text>
+                                                                                    <text transform="matrix(1,0,0,1,225,70.777)" text-anchor="middle" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">
+                                                                                        <tspan>{$_('categories.process')}</tspan>
+                                                                                        <tspan x="0" y="20">{process}</tspan>
+                                                                                    </text>
                                                                             </g>
                                                                             <g style="mix-blend-mode:normal;" opacity="0.32">
-                                                                                <text transform="matrix(1,0,0,1,49,251.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">{$_('categories.ideas')}: {ideas}</text>
+                                                                                    <text transform="matrix(1,0,0,1,75,231.777)" text-anchor="middle" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">
+                                                                                        <tspan>{$_('categories.ideas')}</tspan>
+                                                                                        <tspan x="0" y="20">{ideas}</tspan>
+                                                                                    </text>
                                                                             </g>
                                                                             <g style="mix-blend-mode:normal;" opacity="0.32">
-                                                                                <text transform="matrix(1,0,0,1,192,251.777)" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">{$_('categories.people')}: {people}</text>
+                                                                                    <text transform="matrix(1,0,0,1,225,231.777)" text-anchor="middle" style="font-family:'Open Sans';font-weight:400;font-size:20px;font-style:normal;fill:#000000;stroke:none;">
+                                                                                        <tspan>{$_('categories.people')}</tspan>
+                                                                                        <tspan x="0" y="20">{people}</tspan>
+                                                                                    </text>
                                                                             </g>
                                                                             <circle vector-effect="non-scaling-stroke" cx="{action_x}" cy="{action_y}" r="4" fill="rgb(255,0,0)"/>
                                                                                 <circle vector-effect="non-scaling-stroke" cx="{ideas_x}" cy="{ideas_y}" r="4" fill="rgb(255,0,0)"/>
