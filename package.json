@@ -41,6 +41,7 @@
     "@smui/data-table": "^6.1.4",
     "@smui/dialog": "^6.1.4",
     "@smui/select": "^6.1.4",
+    "browserify": "^17.0.0",
     "buffer": "^6.0.3",
     "countries-list": "^2.5.6",
     "http-browserify": "^1.7.0",
