@@ -45,7 +45,7 @@ import Button, {
 import IconButton, {
     Icon
 } from '@smui/icon-button';
-import IconTextField from '@smui/textfield/icon/index';
+import IconTextField from '@smui/textfield/icon';
 import Textfield from '@smui/textfield';
 import HelperText from '@smui/textfield/helper-text'
 
@@ -54,8 +54,6 @@ import FormField from '@smui/form-field';
 import Select, {
     Option
 } from '@smui/select';
-import Slider from '@smui/slider'
-import Textarea from '@smui/textfield/Textarea.svelte';
 import Dialog, {
     Title,
     InitialFocus
@@ -660,6 +658,8 @@ p {
                         <Option value={countries[country].name} selected={info.country === country}>{countries[country].emoji}&nbsp;&nbsp;{countries[country].native}</Option>
                         {/each}
                     </Select>
+                    <br/>
+                    <small style="align: left;">* {$_('demographics.countryExplain')}</small>
                 </div>
                 <div class="col-md-3 col-xs-12">
                     <Select enhanced bind:invalid={infoInvalid.language} bind:value={info.language} label="{$_('demographics.language')}" menu>
@@ -697,8 +697,6 @@ p {
                     </Select>
                 </div>
                 <div class="col-xs-12">
-                    <small style="align: left;">* {$_('demographics.countryExplain')}</small>
-                    <br>
                     <center>
                         <FormField  bind:invalid={infoInvalid.eula} style="margin-right: 1em;">
                             <Checkbox bind:checked={info.eula} required />
@@ -826,7 +824,7 @@ p {
                                                                                                                 <p>{$_('app.emailResults')}</p>
                                                                                                                 <Textfield tabindex="0" type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="{$_('labels.email')}" style="min-width: 250px;">
                                                                                                                     {#if email_address.value != ""}
-                                                                                                                    <IconTextField tabindex="1" class="material-icons" role="button" on:  on:click={()=> emailResults(info.results[info.results.length-1]._id)}>send</IconTextField>
+                                                                                                                    <IconTextField tabindex="1" class="material-icons" role="button" on:click={()=> emailResults(info.results[info.results.length-1]._id)}>send</IconTextField>
                                                                                                                     {/if}
                                                                                                                 </Textfield>
                                                                                                                 {#if !email_address.dirty && email_address.message != ""}

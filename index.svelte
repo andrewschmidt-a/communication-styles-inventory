@@ -14,7 +14,8 @@
   let people_y = "229"
 </script>
 
-<style>
+<style global>
+    @import "@material/typography/mdc-typography";
 	h1, figure, p {
 		text-align: center;
 		margin: 0 auto;
@@ -46,13 +47,35 @@
 			font-size: 4em;
 		}
 	}
+    
+
+.container {
+  padding: 30px;
+}
+.mdc-text-field-helper-line {
+  display: block !important;
+}
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+  <!-- Fonts -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700"
+  />
+
+  <!-- Material Typography -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@material/typography@14.0.0/dist/mdc.typography.css"
+  />
+
+  <!-- SMUI -->
+  <link rel="stylesheet" href="https://unpkg.com/svelte-material-ui@6.1.4/bare.css" />
 </svelte:head>
 
 
