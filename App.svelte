@@ -4,6 +4,8 @@
  ************************/
 
 import { dictionary, locale, _, init} from 'svelte-i18n';
+import {Buffer} from 'buffer';
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const language = urlParams.get('lng');
