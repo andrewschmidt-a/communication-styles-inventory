@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+//const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 module.exports = {
   mode: 'development',
@@ -53,7 +54,9 @@ module.exports = {
     // fix "process is not defined" error:
     new webpack.ProvidePlugin({
       process: 'process/browser',
+      Buffer: ['buffer', 'Buffer']
     }),
+    //new NodePolyfillPlugin()
   ],
   module: {
     rules: [

@@ -49,6 +49,7 @@
     "languages-list": "^1.0.2",
     "mdbsvelte": "^1.0.10",
     "mongodb": "^3.6.3",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "process": "^0.11.10",
     "professions": "^1.0.2",
     "sharp": "^0.30.5",
