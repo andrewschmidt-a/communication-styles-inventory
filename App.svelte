@@ -4,7 +4,6 @@
  ************************/
 
 import { dictionary, locale, _, init} from 'svelte-i18n';
-//import {Buffer} from 'buffer';
 
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -119,143 +118,110 @@ let BASE_FUNCTIONS_URL = "/.netlify/functions/"
 let emailResults = function(request_id) {
   return new Promise(function(resolve, reject){
     if (email_address.invalid == false && email_address.dirty == true && email_address.value != "") {
-        var options = {
-            "method": "POST",
-            "port": null,
-            "path": `${BASE_FUNCTIONS_URL}email`,
-            "headers": {
-                "content-type": "application/json"
-            }
-        };
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                to: email_address.value,
+                id: request_id
+            })
+            };
 
-        var req = http.request(options, function(res) {
-            var chunks = [];
-
-            res.on("data", function(chunk) {
-                chunks.push(chunk);
-            });
-
-            res.on("end", function() {
-                var body = Buffer.concat(chunks);
+            fetch(`${BASE_FUNCTIONS_URL}email`, options)
+            .then(response => response.text())
+            .then(data => {
                 email_address = {
-                    value: "",
-                    dirty: false,
-                    invalid: true,
-                    message: `Sent to ${email_address.value}`
-                }
-                resolve(`Sent to ${email_address.value}`)
-            });
-        });
-
-        req.write(JSON.stringify({
-            "to": email_address.value,
-            "id": request_id
-        }));
-        req.end();
+                value: '',
+                dirty: false,
+                invalid: true,
+                message: `Sent to ${email_address.value}`
+                };
+                console.log(`Sent to ${email_address.value}`);
+            })
+            .catch(error => console.error(error));
     }else{
       reject("Email not valid")
     }
   })
 }
 let createProfile = function() {
-    var options = {
-        "method": "POST",
-        "port": null,
-            "path": `${BASE_FUNCTIONS_URL}users`,
-        "headers": {
-            "content-type": "application/json"
-        }
-    };
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(info)
+        };
 
-    var req = http.request(options, function(res) {
-        if (res.statusCode == 200) {
-            var chunks = [];
-
-            res.on("data", function(chunk) {
-                chunks.push(chunk);
-            });
-
-            res.on("end", function() {
-                var body = JSON.parse(Buffer.concat(chunks));
-
-                id = body._id
-                state = stateEnum.TAKE_TEST
-            });
-
-        }
-    });
-
-    req.write(JSON.stringify(info));
-    req.end();
+        fetch(`${BASE_FUNCTIONS_URL}users`, options)
+        .then(response => {
+            if (response.status === 200) {
+            return response.json();
+            }
+        })
+        .then(data => {
+            if (data) {
+            id = data._id;
+            state = stateEnum.TAKE_TEST;
+            }
+        })
+        .catch(error => console.error(error));
 }
 
 let getProfile = async function(id) {
     return new Promise(function(resolve, reject) {
-        var options = {
-            "method": "GET",
-            "port": null,
-            "path": `${BASE_FUNCTIONS_URL}users?id=${id}`,
-            "headers": {
-                "content-type": "application/json"
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
             }
-        };
+            };
 
-        var req = http.request(options, function(res) {
-            if (res.statusCode == 200) {
-                var chunks = [];
-
-                res.on("data", function(chunk) {
-                    chunks.push(chunk);
-                });
-
-                res.on("end", function() {
-                    var body = JSON.parse(Buffer.concat(chunks));
-                    resolve(body)
-                });
-
-            }
-        });
-
-        req.write(JSON.stringify(info));
-        req.end();
+            fetch(`${BASE_FUNCTIONS_URL}users?id=${id}`, options)
+            .then(response => {
+                if (response.status === 200) {
+                return response.json();
+                }
+            })
+            .then(data => {
+                if (data) {
+                resolve(data);
+                }
+            })
+            .catch(error => console.error(error));
     })
 }
 
 let postResult = async function() {
     return new Promise(function(resolve, reject) {
-        var options = {
-            "method": "POST",
-            "port": null,
-            "path": `${BASE_FUNCTIONS_URL}results`,
-            "headers": {
-                "content-type": "application/json"
-            }
-        };
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                action: action,
+                process: process,
+                people: people,
+                ideas: ideas,
+                user_id: id
+            })
+            };
 
-        var req = http.request(options, function(res) {
-            if (res.statusCode == 200) {
-                var chunks = [];
-
-                res.on("data", function(chunk) {
-                    chunks.push(chunk);
-                });
-
-                res.on("end", function() {
-                    var body = JSON.parse(Buffer.concat(chunks));
-                    resolve(body)
-                });
-
-            }
-        });
-
-        req.write(JSON.stringify({
-          action: action,
-          process: process,
-          people: people,
-          ideas: ideas,
-          user_id: id
-        }));
-        req.end();
+            fetch(`${BASE_FUNCTIONS_URL}results`, options)
+            .then(response => {
+                if (response.status === 200) {
+                return response.json();
+                }
+            })
+            .then(data => {
+                if (data) {
+                resolve(data);
+                }
+            })
+            .catch(error => console.error(error));
     })
 }
 
