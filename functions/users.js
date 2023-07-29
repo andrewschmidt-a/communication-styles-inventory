@@ -21,7 +21,9 @@ exports.handler = function(event, context, callback) {
         user = Object.assign(body, {_id: uuidv4()})
 
         console.dir(await collection.insertOne(user));
-      } finally {
+      }catch(e){
+        callback(null, {statusCode: 500, body: JSON.stringify(e)})
+      }finally {
         // Ensures that the client will close when you finish/error
         await client.close();
         callback(null, {statusCode: 200, body: JSON.stringify(user)})
