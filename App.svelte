@@ -9,10 +9,7 @@ const localeList = require('./locales/index.js')
 
 
 const urlParams = new URLSearchParams(window.location.search);
-var language = urlParams.get('lng');
-if(!Object.keys(localeList).includes(language)){
-    language = undefined;
-}
+const language = (Object.keys(localeList).includes(language))?urlParams.get('lng'): undefined;
 console.log(language);
 init({
     fallbackLocale: 'en',
