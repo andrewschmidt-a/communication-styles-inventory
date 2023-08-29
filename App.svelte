@@ -5,9 +5,14 @@
 
 import { dictionary, locale, _, init} from 'svelte-i18n';
 
+const locales = require('./locales/index.js')
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const language = urlParams.get('lng');
+if(!Object.keys(locales).includes(language)){
+    language = undefined;
+}
 console.log(language);
 init({
     fallbackLocale: 'en',
@@ -21,7 +26,7 @@ $: if(localeChoice != language) {window.location.replace("?lng="+localeChoice);}
 
 
 // ...
-dictionary.set(require('./locales/index.js'));
+dictionary.set(locales);
 
 
 import DataTable, {
