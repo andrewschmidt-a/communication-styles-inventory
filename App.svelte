@@ -794,7 +794,7 @@ p {
                                                                                                                 <p>{$_('app.emailResults')}</p>
                                                                                                                 <Textfield tabindex="0" type="email" withTrailingIcon={email_address.value !== ''} bind:dirty={email_address.dirty} bind:invalid={email_address.invalid} updateInvalid bind:value={email_address.value} label="{$_('labels.email')}" style="min-width: 250px;">
                                                                                                                     {#if email_address.value != ""}
-                                                                                                                    <IconTextField tabindex="1" class="material-icons" role="button" on:click={()=> emailResults(info.results[info.results.length-1]._id)}>send</IconTextField>
+                                                                                                                    <IconTextField tabindex="1" class="material-icons" role="button" slot=trailingIcon on:click={()=> emailResults(info.results[info.results.length-1]._id)}>send</IconTextField>
                                                                                                                     {/if}
                                                                                                                 </Textfield>
                                                                                                                 {#if !email_address.dirty && email_address.message != ""}
